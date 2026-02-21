@@ -58,5 +58,45 @@
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>week 3</span>"
     ]
+  },
+  {
+    "objectID": "week 1.html",
+    "href": "week 1.html",
+    "title": "1  week 1",
+    "section": "",
+    "text": "1.1 Summary\nThis week I built a basic understanding of remote sensing and Earth observation, and I used Sentinel-2 imagery to make simple visual outputs for West London. Remote sensing works by measuring electromagnetic radiation across different wavelengths and linking those signals to surface features and processes. Passive sensors mainly record reflected solar energy, while active sensors transmit energy and measure the return signal. Whether a dataset fits an urban question depends on trade-offs between spatial, temporal, spectral, and radiometric resolution, and also on practical limits such as cloud cover and atmospheric effects.\nI focused on visual interpretation in SNAP using two Sentinel-2 composites. The true colour image provides a familiar view of the urban landscape and supports quick identification of built-up areas, water, and major green spaces. The false colour composite maps near-infrared information into a visible channel, so vegetation becomes visually distinct and appears red or brighter. This helped me separate green space patterns from buildings and roads and connect the appearance of land cover to spectral behaviour. (Kerle, Janssen, and Bakker 2004a; Butcher 2016)\nA key learning point is the difference between display and data. In SNAP, the histogram and contrast stretching tools change how the image looks on screen by redistributing brightness and contrast, but they do not change the underlying pixel values. This matters because visual outputs are useful for exploration and communication, while analysis must rely on the original values and a transparent processing workflow. (Jensen 2016a)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>week 1</span>"
+    ]
+  },
+  {
+    "objectID": "week 1.html#summary",
+    "href": "week 1.html#summary",
+    "title": "1  week 1",
+    "section": "",
+    "text": "West London in Sentinel-2. True colour\n\n\n\n\n\n\nWest London in Sentinel-2. false colour\n\n\n\n\n\n\nSnap Histogram",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>week 1</span>"
+    ]
+  },
+  {
+    "objectID": "week 1.html#applications",
+    "href": "week 1.html#applications",
+    "title": "1  week 1",
+    "section": "1.2 Applications",
+    "text": "1.2 Applications\n\n\n\nTable 1. Practical sensor choices for West London in Week 1.\n\n\n\n\n\n\n\n\nData\nUse\nWhy\nLimits\n\n\n\n\nSentinel-2 MSI\nNeighbourhood greenness and vegetation patterns\n10 m detail supports street level variation\nCloud and shadow are common in London\n\n\nLandsat 8/9 OLI TIRS\nLand surface temperature and summer heat hotspots\nLong archive supports year to year comparison\nCloud limits usable scenes and small parks can be mixed in 30 m pixels\n\n\n\n\n\nIn West London, Earth observation can support decisions about green infrastructure and health. Studies using Sentinel-2 at 10 m calculate NDVI from the red band and the near infrared band to map urban greenness and compare it with deprivation and access to parks (Robinson et al. 2022). This works because vegetation has a strong response in near infrared, so the index separates trees and grass from roofs and roads (Jensen 2016b). For my study area I can summarise seasonal NDVI for each neighbourhood and highlight places with low greenness near busy roads. I can then connect these spatial patterns to London policy goals on green infrastructure and access to green space (“London Environment Strategy | London City Hall,” n.d.).\nHeat risk is a second application where sensor trade offs matter. The Greater London Authority has released a map of summer heat hotspots derived from Landsat thermal land surface temperature, built from several summers of images (“Major Summer Heat Spots Using Landsat-8 Thermal Satellite Data - London Datastore,” n.d.). Landsat has a long archive and consistent pixels, so it is useful for comparing heat patterns across years, but cloud and revisit limits mean I should use multi date composites and focus on clear scenes . In West London I can overlay Landsat heat hotspots with Sentinel-2 greenness to find streets where low vegetation aligns with high surface temperature. This can support targeted cooling actions such as tree planting, shade design, and monitoring progress over time.\n\n\n\nWork flow",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>week 1</span>"
+    ]
+  },
+  {
+    "objectID": "week 1.html#reflection",
+    "href": "week 1.html#reflection",
+    "title": "1  week 1",
+    "section": "1.3 Reflection",
+    "text": "1.3 Reflection\nThis week changed how I think about remote sensing. I used to see satellite images as pictures, but now I see them as measurements of energy and materials. In West London, the first real challenge is not choosing an index, but choosing data that fits the scale of the question. Small parks and street trees push me toward higher spatial resolution, while the need to separate vegetation from built surfaces depends on spectral behaviour in the red and near infrared (Kerle, Janssen, and Bakker 2004b). At the same time, London cloud makes many optical scenes unusable, so a realistic workflow needs cloud filtering and multi date composites, not a single perfect image. This also matters for policy use. A map that looks clean can still hide uncertainty from seasonality, mixed pixels, and missing observations. My main lesson is that the four resolutions are not theory, they are constraints that shape what is possible and what is fair to claim (Jensen 2016c). Next week I want to keep my work reproducible by recording every choice I make, including area of interest, dates, and quality filters, so that my results can be checked and updated.\n\n\n\n\nButcher, Ginger. 2016. Tour of the Electromagnetic Spectrum. Third edition. Washington, DC: National Aeronautics; Space Administration.\n\n\nJensen, John R. 2016a. Introductory digital image processing: a remote sensing perspective. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.\n\n\n———. 2016b. Introductory digital image processing: a remote sensing perspective. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.\n\n\n———. 2016c. Introductory digital image processing: a remote sensing perspective. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.\n\n\nKerle, Norman, Lucas Janssen, and Wim H. Bakker. 2004a. Principles of Remote Sensing: An Introductory Textbook. 3rd ed. Enschede: The International Institute for Geo-Information Science; Earth Observation (ITC).\n\n\n———. 2004b. Principles of Remote Sensing: An Introductory Textbook. 3rd ed. Enschede: The International Institute for Geo-Information Science; Earth Observation (ITC).\n\n\n“London Environment Strategy | London City Hall.” n.d. https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/london-environment-strategy.\n\n\n“Major Summer Heat Spots Using Landsat-8 Thermal Satellite Data - London Datastore.” n.d. https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw.\n\n\nRobinson, Jake M., Suzanne Mavoa, Kate Robinson, and Paul Brindley. 2022. “Urban Centre Green Metrics in Great Britain: A Geospatial and Socioecological Study.” Edited by Eda Ustaoglu. PLOS ONE 17 (11): e0276962. https://doi.org/10.1371/journal.pone.0276962.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>week 1</span>"
+    ]
   }
 ]

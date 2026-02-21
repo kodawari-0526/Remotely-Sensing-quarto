@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -155,8 +175,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">1.2</span> Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -180,8 +208,111 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="summary" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
+<p>This week I built a basic understanding of remote sensing and Earth observation, and I used Sentinel-2 imagery to make simple visual outputs for West London. Remote sensing works by measuring electromagnetic radiation across different wavelengths and linking those signals to surface features and processes. Passive sensors mainly record reflected solar energy, while active sensors transmit energy and measure the return signal. Whether a dataset fits an urban question depends on trade-offs between spatial, temporal, spectral, and radiometric resolution, and also on practical limits such as cloud cover and atmospheric effects.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Sentinel-2 （True colour）.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>West London in Sentinel-2. True colour</figcaption>
+</figure>
+</div>
+<p>I focused on visual interpretation in SNAP using two Sentinel-2 composites. The true colour image provides a familiar view of the urban landscape and supports quick identification of built-up areas, water, and major green spaces. The false colour composite maps near-infrared information into a visible channel, so vegetation becomes visually distinct and appears red or brighter. This helped me separate green space patterns from buildings and roads and connect the appearance of land cover to spectral behaviour. <span class="citation" data-cites="kerle2004 butcher2016">(<a href="references.html#ref-kerle2004" role="doc-biblioref">Kerle, Janssen, and Bakker 2004a</a>; <a href="references.html#ref-butcher2016" role="doc-biblioref">Butcher 2016</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Sentinel-2 （False colour）.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>West London in Sentinel-2. false colour</figcaption>
+</figure>
+</div>
+<p>A key learning point is the difference between display and data. In SNAP, the histogram and contrast stretching tools change how the image looks on screen by redistributing brightness and contrast, but they do not change the underlying pixel values. This matters because visual outputs are useful for exploration and communication, while analysis must rely on the original values and a transparent processing workflow. <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref">Jensen 2016a</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/SNAP histogram.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Snap Histogram</figcaption>
+</figure>
+</div>
+</section>
+<section id="applications" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">1.2</span> Applications</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Table 1. Practical sensor choices for West London in Week 1.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Use</th>
+<th style="text-align: left;">Why</th>
+<th style="text-align: left;">Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sentinel-2 MSI</td>
+<td style="text-align: left;">Neighbourhood greenness and vegetation patterns</td>
+<td style="text-align: left;">10 m detail supports street level variation</td>
+<td style="text-align: left;">Cloud and shadow are common in London</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Landsat 8/9 OLI TIRS</td>
+<td style="text-align: left;">Land surface temperature and summer heat hotspots</td>
+<td style="text-align: left;">Long archive supports year to year comparison</td>
+<td style="text-align: left;">Cloud limits usable scenes and small parks can be mixed in 30 m pixels</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In West London, Earth observation can support decisions about green infrastructure and health. Studies using Sentinel-2 at 10 m calculate NDVI from the red band and the near infrared band to map urban greenness and compare it with deprivation and access to parks <span class="citation" data-cites="robinson2022">(<a href="references.html#ref-robinson2022" role="doc-biblioref">Robinson et al. 2022</a>)</span>. This works because vegetation has a strong response in near infrared, so the index separates trees and grass from roofs and roads <span class="citation" data-cites="jensen2016a">(<a href="references.html#ref-jensen2016a" role="doc-biblioref">Jensen 2016b</a>)</span>. For my study area I can summarise seasonal NDVI for each neighbourhood and highlight places with low greenness near busy roads. I can then connect these spatial patterns to London policy goals on green infrastructure and access to green space <span class="citation" data-cites="londone">(<a href="references.html#ref-londone" role="doc-biblioref"><span>“London Environment Strategy | London City Hall,”</span> n.d.</a>)</span>.</p>
+<p>Heat risk is a second application where sensor trade offs matter. The Greater London Authority has released a map of summer heat hotspots derived from Landsat thermal land surface temperature, built from several summers of images <span class="citation" data-cites="majorsua">(<a href="references.html#ref-majorsua" role="doc-biblioref"><span>“Major Summer Heat Spots Using Landsat-8 Thermal Satellite Data - London Datastore,”</span> n.d.</a>)</span>. Landsat has a long archive and consistent pixels, so it is useful for comparing heat patterns across years, but cloud and revisit limits mean I should use multi date composites and focus on clear scenes . In West London I can overlay Landsat heat hotspots with Sentinel-2 greenness to find streets where low vegetation aligns with high surface temperature. This can support targeted cooling actions such as tree planting, shade design, and monitoring progress over time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/work flow.png" style="width:25cm;height:8cm" class="figure-img"></p>
+<figcaption>Work flow</figcaption>
+</figure>
+</div>
+</section>
+<section id="reflection" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
+<p>This week changed how I think about remote sensing. I used to see satellite images as pictures, but now I see them as measurements of energy and materials. In West London, the first real challenge is not choosing an index, but choosing data that fits the scale of the question. Small parks and street trees push me toward higher spatial resolution, while the need to separate vegetation from built surfaces depends on spectral behaviour in the red and near infrared <span class="citation" data-cites="kerle2004a">(<a href="references.html#ref-kerle2004a" role="doc-biblioref">Kerle, Janssen, and Bakker 2004b</a>)</span>. At the same time, London cloud makes many optical scenes unusable, so a realistic workflow needs cloud filtering and multi date composites, not a single perfect image. This also matters for policy use. A map that looks clean can still hide uncertainty from seasonality, mixed pixels, and missing observations. My main lesson is that the four resolutions are not theory, they are constraints that shape what is possible and what is fair to claim <span class="citation" data-cites="jensen2016b">(<a href="references.html#ref-jensen2016b" role="doc-biblioref">Jensen 2016c</a>)</span>. Next week I want to keep my work reproducible by recording every choice I make, including area of interest, dates, and quality filters, so that my results can be checked and updated.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-butcher2016" class="csl-entry" role="listitem">
+Butcher, Ginger. 2016. <em>Tour of the Electromagnetic Spectrum</em>. Third edition. Washington, DC: National Aeronautics; Space Administration.
+</div>
+<div id="ref-jensen2016" class="csl-entry" role="listitem">
+Jensen, John R. 2016a. <em>Introductory digital image processing: a remote sensing perspective</em>. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.
+</div>
+<div id="ref-jensen2016a" class="csl-entry" role="listitem">
+———. 2016b. <em>Introductory digital image processing: a remote sensing perspective</em>. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.
+</div>
+<div id="ref-jensen2016b" class="csl-entry" role="listitem">
+———. 2016c. <em>Introductory digital image processing: a remote sensing perspective</em>. Fourth edition. Pearson series in geographic information science. Glenview, Ill: Pearson Education.
+</div>
+<div id="ref-kerle2004" class="csl-entry" role="listitem">
+Kerle, Norman, Lucas Janssen, and Wim H. Bakker. 2004a. <em>Principles of Remote Sensing: An Introductory Textbook</em>. 3rd ed. Enschede: The International Institute for Geo-Information Science; Earth Observation (ITC).
+</div>
+<div id="ref-kerle2004a" class="csl-entry" role="listitem">
+———. 2004b. <em>Principles of Remote Sensing: An Introductory Textbook</em>. 3rd ed. Enschede: The International Institute for Geo-Information Science; Earth Observation (ITC).
+</div>
+<div id="ref-londone" class="csl-entry" role="listitem">
+<span>“London Environment Strategy | London City Hall.”</span> n.d. <a href="https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/london-environment-strategy">https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/london-environment-strategy</a>.
+</div>
+<div id="ref-majorsua" class="csl-entry" role="listitem">
+<span>“Major Summer Heat Spots Using Landsat-8 Thermal Satellite Data - London Datastore.”</span> n.d. <a href="https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw">https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw</a>.
+</div>
+<div id="ref-robinson2022" class="csl-entry" role="listitem">
+Robinson, Jake M., Suzanne Mavoa, Kate Robinson, and Paul Brindley. 2022. <span>“Urban Centre Green Metrics in Great Britain: A Geospatial and Socioecological Study.”</span> Edited by Eda Ustaoglu. <em>PLOS ONE</em> 17 (11): e0276962. <a href="https://doi.org/10.1371/journal.pone.0276962">https://doi.org/10.1371/journal.pone.0276962</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

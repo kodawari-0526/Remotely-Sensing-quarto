@@ -18,7 +18,11 @@ A key learning point is the difference between display and data. In SNAP, the hi
 
 ## Applications
 
+
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 library(knitr)
 
 sensor_tbl <- data.frame(
@@ -31,8 +35,12 @@ sensor_tbl <- data.frame(
 kable(sensor_tbl, caption = "Table 1. Practical sensor choices for West London in Week 1.")
 ```
 
-In West London, Earth observation can support decisions about green infrastructure and health. Studies using Sentinel-2 at 10 m calculate NDVI from the red band and the near infrared band to map urban greenness and compare it with deprivation and access to parks [@robinson2022]. This works because vegetation has a strong response in near infrared, so the index separates trees and grass from roofs and roads [@jensen2015]. For my study area I can summarise seasonal NDVI for each neighbourhood and highlight places with low greenness near busy roads. I can then connect these spatial patterns to London policy goals on green infrastructure and access to green space [@gla_les].
+In West London, Earth observation can support decisions about green infrastructure and health. Studies using Sentinel-2 at 10 m calculate NDVI from the red band and the near infrared band to map urban greenness and compare it with deprivation and access to parks [@robinson2022]. This works because vegetation has a strong response in near infrared, so the index separates trees and grass from roofs and roads [@jensen2016a]. For my study area I can summarise seasonal NDVI for each neighbourhood and highlight places with low greenness near busy roads. I can then connect these spatial patterns to London policy goals on green infrastructure and access to green space [@londone].
 
-Heat risk is a second application where sensor trade offs matter. The Greater London Authority has released a map of summer heat hotspots derived from Landsat thermal land surface temperature, built from several summers of images [@gla_heatspots]. Landsat has a long archive and consistent pixels, so it is useful for comparing heat patterns across years, but cloud and revisit limits mean I should use multi date composites and focus on clear scenes [@maclachlan_intro]. In West London I can overlay Landsat heat hotspots with Sentinel-2 greenness to find streets where low vegetation aligns with high surface temperature. This can support targeted cooling actions such as tree planting, shade design, and monitoring progress over time.
+Heat risk is a second application where sensor trade offs matter. The Greater London Authority has released a map of summer heat hotspots derived from Landsat thermal land surface temperature, built from several summers of images [@majorsua]. Landsat has a long archive and consistent pixels, so it is useful for comparing heat patterns across years, but cloud and revisit limits mean I should use multi date composites and focus on clear scenes . In West London I can overlay Landsat heat hotspots with Sentinel-2 greenness to find streets where low vegetation aligns with high surface temperature. This can support targeted cooling actions such as tree planting, shade design, and monitoring progress over time.
 
-![Work flow](img/work%20flow.png){width="100%"}
+![Work flow](img/work%20flow.png){width="25cm" height="8cm"}
+
+## Reflection
+
+This week changed how I think about remote sensing. I used to see satellite images as pictures, but now I see them as measurements of energy and materials. In West London, the first real challenge is not choosing an index, but choosing data that fits the scale of the question. Small parks and street trees push me toward higher spatial resolution, while the need to separate vegetation from built surfaces depends on spectral behaviour in the red and near infrared [@kerle2004a]. At the same time, London cloud makes many optical scenes unusable, so a realistic workflow needs cloud filtering and multi date composites, not a single perfect image. This also matters for policy use. A map that looks clean can still hide uncertainty from seasonality, mixed pixels, and missing observations. My main lesson is that the four resolutions are not theory, they are constraints that shape what is possible and what is fair to claim [@jensen2016b]. Next week I want to keep my work reproducible by recording every choice I make, including area of interest, dates, and quality filters, so that my results can be checked and updated.
