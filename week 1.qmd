@@ -1,3 +1,38 @@
 ---
 title: "week 1"
 ---
+
+## Summary
+
+This week I built a basic understanding of remote sensing and Earth observation, and I used Sentinel-2 imagery to make simple visual outputs for West London. Remote sensing works by measuring electromagnetic radiation across different wavelengths and linking those signals to surface features and processes. Passive sensors mainly record reflected solar energy, while active sensors transmit energy and measure the return signal. Whether a dataset fits an urban question depends on trade-offs between spatial, temporal, spectral, and radiometric resolution, and also on practical limits such as cloud cover and atmospheric effects.
+
+![West London in Sentinel-2. True colour](img/Sentinel-2%20（True%20colour）.png){width="100%"}
+
+I focused on visual interpretation in SNAP using two Sentinel-2 composites. The true colour image provides a familiar view of the urban landscape and supports quick identification of built-up areas, water, and major green spaces. The false colour composite maps near-infrared information into a visible channel, so vegetation becomes visually distinct and appears red or brighter. This helped me separate green space patterns from buildings and roads and connect the appearance of land cover to spectral behaviour. [@kerle2004; @butcher2016]
+
+![West London in Sentinel-2. false colour](img/Sentinel-2%20（False%20colour）.png){width="100%"}
+
+A key learning point is the difference between display and data. In SNAP, the histogram and contrast stretching tools change how the image looks on screen by redistributing brightness and contrast, but they do not change the underlying pixel values. This matters because visual outputs are useful for exploration and communication, while analysis must rely on the original values and a transparent processing workflow. [@jensen2016]
+
+![Snap Histogram](img/SNAP%20histogram.png){width="100%"}
+
+## Applications
+
+```{r}
+library(knitr)
+
+sensor_tbl <- data.frame(
+  Data = c("Sentinel-2 MSI", "Landsat 8/9 OLI TIRS"),
+  Use = c("Neighbourhood greenness and vegetation patterns", "Land surface temperature and summer heat hotspots"),
+  Why = c("10 m detail supports street level variation", "Long archive supports year to year comparison"),
+  Limits = c("Cloud and shadow are common in London", "Cloud limits usable scenes and small parks can be mixed in 30 m pixels")
+)
+
+kable(sensor_tbl, caption = "Table 1. Practical sensor choices for West London in Week 1.")
+```
+
+In West London, Earth observation can support decisions about green infrastructure and health. Studies using Sentinel-2 at 10 m calculate NDVI from the red band and the near infrared band to map urban greenness and compare it with deprivation and access to parks [@robinson2022]. This works because vegetation has a strong response in near infrared, so the index separates trees and grass from roofs and roads [@jensen2015]. For my study area I can summarise seasonal NDVI for each neighbourhood and highlight places with low greenness near busy roads. I can then connect these spatial patterns to London policy goals on green infrastructure and access to green space [@gla_les].
+
+Heat risk is a second application where sensor trade offs matter. The Greater London Authority has released a map of summer heat hotspots derived from Landsat thermal land surface temperature, built from several summers of images [@gla_heatspots]. Landsat has a long archive and consistent pixels, so it is useful for comparing heat patterns across years, but cloud and revisit limits mean I should use multi date composites and focus on clear scenes [@maclachlan_intro]. In West London I can overlay Landsat heat hotspots with Sentinel-2 greenness to find streets where low vegetation aligns with high surface temperature. This can support targeted cooling actions such as tree planting, shade design, and monitoring progress over time.
+
+![Work flow](img/work%20flow.png){width="100%"}
