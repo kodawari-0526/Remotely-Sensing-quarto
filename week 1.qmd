@@ -18,7 +18,6 @@ A key learning point is the difference between display and data. In SNAP, the hi
 
 ## Applications
 
-
 ```{r}
 #| echo: false
 #| message: false
