@@ -1,0 +1,13 @@
+---
+title: "introduction"
+---
+
+My name is Zhexiang Zhou. I studied Civil Engineering at the University of Glasgow for my undergraduate degree. Now I am a student at UCL in the MSc Urban Spatial Science programme.
+
+My study direction is related to digital twins and data-driven methods for urban problems. In my undergraduate study, I learned basic urban and transport design. I also used Python for programming and machine learning. However, GIS, remote sensing, R, statistics, and urban policy research are new to me.
+
+I am interested in connecting remote sensing or sensor data with computer vision (CV) and large language models (LLMs). I want to use these methods to solve urban problems. I care more about climate and resilient cities. This topic is important to me because I enjoy digital twins and I have internship experience in this area. I also want to develop this into my dissertation topic. I think CV and LLMs have strong potential in urban spatial science, and there are still many research gaps.
+
+In this module, I want to build a solid foundation in remote sensing. I want to understand and compare different sensors and datasets, for example how different spatial resolutions affect results. In the future, I hope to use strong remote sensing knowledge to support interdisciplinary research and publish academic papers.
+
+I will use this learning diary to read more related papers and build my own literature library. I will also record my practical work, outputs, and questions each week. By the end of the term, I hope to have a useful literature collection that can support my future research, including possible PhD study.
