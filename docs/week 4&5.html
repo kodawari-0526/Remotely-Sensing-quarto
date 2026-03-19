@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,6 +130,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -321,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -401,25 +424,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This week focused on turning a city policy challenge into a measurable monitoring plan using Earth Observation. I selected London and the challenge of extreme heat risk that is uneven across neighbourhoods. Heat is not only a climate issue. It is also a public health and environmental justice issue because exposure and vulnerability can cluster in the same places. A practical policy response needs clear targets, clear responsibilities, and a way to measure change over time. In London, greening policy already exists through the London Plan and the Urban Greening Factor guidance, which asks major developments to treat greening as a core design element and to report a greening score. This creates a strong entry point for EO evidence because EO can measure where heat and greenness are high or low, and whether patterns shift after investment and planning decisions.</p>
-<p>I propose a simple EO indicator set that can support both targeting and accountability. First, Land Surface Temperature from Landsat Collection 2 Level 2 can provide a consistent time series to map hot surfaces and to track change after interventions such as new tree cover, green roofs, and shade. The product is designed as a surface temperature science product with quality layers and consistent processing, which supports repeatable analysis across seasons and years. Second, greenness from Sentinel 2 Level 2A surface reflectance can be used to calculate NDVI as a transparent indicator of vegetation signal at high spatial detail. These two indicators allow a policy narrative that is easy to explain. Where surfaces are hottest and greenness is lowest, London can prioritise greening actions and cooling design, then monitor whether the gap closes over time.</p>
-<p>This approach aligns with global agendas. SDG 11 calls for inclusive and resilient cities, SDG 13 focuses on climate action, SDG 3 links to health, and SDG 10 links to reducing inequality. EO is valuable here because it can provide comparable evidence for progress and for fairness, not only for average city outcomes but also for the distribution of benefits.</p>
+<p>These two weeks covered how Earth observation connects to policy. Lecture 4 was a broad survey of EO applications, and lecture 5 zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as <span class="citation" data-cites="hansen2013">(<a href="references.html#ref-hansen2013" role="doc-biblioref"><strong>hansen2013?</strong></a>)</span> showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-eo-apps" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eo-apps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-eo-apps">flowchart LR
+  A[Earth Observation Data] --&gt; B[Urban Expansion&lt;br/&gt;Landsat multi-temporal]
+  A --&gt; C[Flood Mapping&lt;br/&gt;SAR backscatter]
+  A --&gt; D[Forest Monitoring&lt;br/&gt;Decision tree classifier]
+  A --&gt; E[Drought / Fire&lt;br/&gt;Vegetation indices]
+  A --&gt; F[Urban Heat&lt;br/&gt;LST from thermal bands]
+  B &amp; C &amp; D &amp; E &amp; F --&gt; G{Policy Gap:&lt;br/&gt;Most studies stop here}
+  G -.-&gt; H[Who acts on this?&lt;br/&gt;What decision does it support?&lt;br/&gt;Who funds the response?]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eo-apps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: EO applications covered in lecture 4 and their policy relevance
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>What struck me more was the gap the lecture kept highlighting between producing a map and actually changing a policy decision. Several studies were discussed that identify a spatial pattern (heat inequality linked to historical redlining, forest loss hotspots, flood exposure) but then stop short of saying what to do about it. The redlining and heat study found that historically disadvantaged neighbourhoods have higher land surface temperatures and more heat-related hospital visits, yet the paper barely mentions policy. This pattern kept coming up: solid spatial analysis, weak policy link.</p>
+<p>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around $300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref"><strong>unep2021?</strong></a>)</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</p>
+<div id="fig-uhi-profile" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uhi-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week4/epa_uhi_profile.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhi-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Urban heat island profile showing how surface and air temperatures vary across different land uses, from rural areas through suburban and urban centres. Source: U.S. EPA (public domain).
+</figcaption>
+</figure>
+</div>
+<div id="fig-nasa-buffalo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nasa-buffalo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week4/nasa_uhi_buffalo.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nasa-buffalo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Landsat 7 thermal image of Buffalo, New York (3 August 2002). Yellow and red areas indicate higher surface temperatures concentrated in the dense urban core, while blue and green areas show cooler temperatures in parks and surrounding rural land. Source: NASA Earth Observatory.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="applications" class="level2">
 <h2 class="anchored" data-anchor-id="applications">Applications</h2>
-<p>Earth observation can support routine policy tasks such as monitoring, targeting, and evaluation. Gerasopoulos et al.&nbsp;describe EO as a practical input to urban governance when data are timely, accessible, and connected to decision needs . My workflow follows this logic by choosing open satellite products and by defining clear outputs that match a policy question, where to act first for urban cooling and greening. Wellmann et al.&nbsp;also show that remote sensing can contribute to planning, but only when results are translated into planning language and linked to the policy cycle . This is why I frame outputs as priority zones and measurable indicators, not only as scientific maps. Kadhim et al.&nbsp;review urban sustainability applications and highlight the need to connect methods to real policy use .</p>
-<p>Li et al.&nbsp;connect historical inequality, urban heat, and health outcomes with spatial models across multiple cities . It provides evidence that heat exposure reflects structural injustice, which supports an equity based policy framing. Yet studies like this can stop before the last step, the design of an implementable planning rule or investment plan. I use it as a warning that correlation is not enough for policy. Martinez and Labib add another warning. They show that NDVI is often treated as a direct measure of green exposure, but it can hide differences between trees, grass, and season . For policy, this means NDVI should be used with care, and ideally combined with tree canopy or land cover when the policy aim is shade and cooling.</p>
-<p>To move from evidence to action, I align the workflow with a simple governance pathway. First, use heat hotspot and greenness deficit maps to select candidate priority areas. Second, connect these zones to specific instruments, minimum greening requirements for new development and targeted canopy programs for existing neighbourhoods . Third, monitor change each year with the same EO indicators, and report progress against SDG 11 targets and London Plan objectives. This creates a repeatable loop that supports transparency and learning, while keeping uncertainty explicit.</p>
+<p><span class="citation" data-cites="hansen2013">(<a href="references.html#ref-hansen2013" role="doc-biblioref"><strong>hansen2013?</strong></a>)</span> demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers “where” but not “what next”, and that gap is where most studies stop.</p>
+<p>The same disconnect appears in urban heat research. <span class="citation" data-cites="venter2020">Venter et al. (<a href="references.html#ref-venter2020" role="doc-biblioref">2020</a>)</span> combined Sentinel-2 NDVI with Landsat surface temperature in Oslo and found that greener neighbourhoods were 2 to 3 degrees cooler in summer, with lower-income areas missing out on this cooling benefit. This is a clear equity finding, but translating it into a planting programme requires knowing land ownership, soil conditions, community preferences, and budget, none of which come from a satellite. <span class="citation" data-cites="deilami2018">Deilami et al. (<a href="references.html#ref-deilami2018" role="doc-biblioref">2018</a>)</span> reviewed 75 UHI studies and found that most rely on a single daytime Landsat image, which only captures mid-morning conditions on one day. Heat stress actually peaks in the afternoon and evening, so a single snapshot can misrepresent where the worst exposure is. If a city uses that data to decide where to plant trees or install cool surfaces, the priorities could shift depending on when temperature is measured.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-policy-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-policy-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-policy-layers">flowchart TD
+  G["Global Frameworks&lt;br/&gt;(New Urban Agenda, SDGs, Sendai)"] --&gt; M["Metropolitan / National Plans&lt;br/&gt;(London Plan, Singapore Green Plan)"]
+  M --&gt; L["Local Councils&lt;br/&gt;(actual delivery, limited budgets)"]
+  EO["EO Data&lt;br/&gt;(consistent, repeatable, global)"] -.-&gt; G
+  EO -.-&gt; M
+  EO -.-&gt; L
+  L --&gt; P{{"Problem: who processes&lt;br/&gt;the data at this level?"}}
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-policy-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Policy hierarchy: from global frameworks to local delivery, and where EO data could plug in
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref"><strong>unep2021?</strong></a>)</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual “we commit to sustainable cities” language in most framework documents.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>This week helped me see the difference between a technical map and a policy tool. A policy tool needs a clear user, a clear decision point, and a clear statement of uncertainty . The biggest barrier is often not data access. It is skills, time, and coordination across teams. Planning teams, public health teams, and climate teams may use different standards and different timelines. EO products can also be challenged by cloud cover, mixed pixels, and the gap between land surface temperature and lived heat stress <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>)</span>. These issues can reduce trust if they are not communicated simply.</p>
-<p>Fairness is not automatic in data driven policy. If the city targets only the hottest places, it may miss communities with high vulnerability but moderate heat. If it targets only the most deprived places, it may overlook extreme hotspots that create acute health risk. An equity approach should combine exposure and vulnerability, and it should be checked with local knowledge . This is where community engagement and local sensor data can improve the EO screening maps. It also links to the idea that city level strategies often fail at the local scale, unless they are tied to implementable rules and budgets .</p>
-<p>For my own practice, I learned to design EO analysis around a policy workflow, not around a dataset. I will carry this into later work by defining indicators first, then choosing data that can be updated and explained. I also want to extend beyond NDVI by adding tree canopy and impervious surface, so the policy message is closer to shade, cooling, and access to green public space.</p>
+<p>The thing that stuck with me most is how often the chain breaks between analysis and action. I kept expecting the case studies to end with a concrete recommendation, like target this neighbourhood or change this planning rule, but most just conclude that a spatial pattern exists. The Cape Town example from the lecture made this even more real. Even when useful data existed, government departments would not share it because they lacked a data sharing agreement. The bottleneck was not technical capacity but institutional coordination.</p>
+<p>This connects to what I wrote in week 1 about the gap between what satellites can measure and what a council actually needs. A few weeks later I think the gap is wider than I expected, because it is not just about spatial resolution or cloud cover. It is about whether anyone in a planning team knows the data exists, has time to process it, and has the authority to act on the results. For my own work I want to keep asking who the user of the output is and what decision it supports, rather than just producing a technically sound map. I am also curious about cities that have actually built EO into routine planning workflows, what institutional setup made that possible, and whether it survived beyond the initial project funding.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-deilami2018" class="csl-entry" role="listitem">
+Deilami, K., Kamruzzaman, M., &amp; Liu, Y. (2018). Urban heat island effect: A systematic review of spatio-temporal factors, data, methods, and mitigation measures. <em>International Journal of Applied Earth Observation and Geoinformation</em>, <em>67</em>, 185–196. <a href="https://doi.org/10.1016/j.jag.2017.12.009">https://doi.org/10.1016/j.jag.2017.12.009</a>
+</div>
+<div id="ref-venter2020" class="csl-entry" role="listitem">
+Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastructure to urban heat and human health risk mitigation in oslo, norway. <em>Science of The Total Environment</em>, <em>709</em>, 138846. <a href="https://doi.org/10.1016/j.scitotenv.2019.138846">https://doi.org/10.1016/j.scitotenv.2019.138846</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -910,30 +1007,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This week focused on turning a city policy challenge into a measurable monitoring plan using Earth Observation. I selected London and the challenge of extreme heat risk that is uneven across neighbourhoods. Heat is not only a climate issue. It is also a public health and environmental justice issue because exposure and vulnerability can cluster in the same places. A practical policy response needs clear targets, clear responsibilities, and a way to measure change over time. In London, greening policy already exists through the London Plan and the Urban Greening Factor guidance, which asks major developments to treat greening as a core design element and to report a greening score. This creates a strong entry point for EO evidence because EO can measure where heat and greenness are high or low, and whether patterns shift after investment and planning decisions.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>These two weeks covered how Earth observation connects to policy. Lecture 4 was a broad survey of EO applications, and lecture 5 zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as @hansen2013 showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>I propose a simple EO indicator set that can support both targeting and accountability. First, Land Surface Temperature from Landsat Collection 2 Level 2 can provide a consistent time series to map hot surfaces and to track change after interventions such as new tree cover, green roofs, and shade. The product is designed as a surface temperature science product with quality layers and consistent processing, which supports repeatable analysis across seasons and years. Second, greenness from Sentinel 2 Level 2A surface reflectance can be used to calculate NDVI as a transparent indicator of vegetation signal at high spatial detail. These two indicators allow a policy narrative that is easy to explain. Where surfaces are hottest and greenness is lowest, London can prioritise greening actions and cooling design, then monitor whether the gap closes over time.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This approach aligns with global agendas. SDG 11 calls for inclusive and resilient cities, SDG 13 focuses on climate action, SDG 3 links to health, and SDG 10 links to reducing inequality. EO is valuable here because it can provide comparable evidence for progress and for fairness, not only for average city outcomes but also for the distribution of benefits. </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Earth observation can support routine policy tasks such as monitoring, targeting, and evaluation. Gerasopoulos et al. describe EO as a practical input to urban governance when data are timely, accessible, and connected to decision needs . My workflow follows this logic by choosing open satellite products and by defining clear outputs that match a policy question, where to act first for urban cooling and greening. Wellmann et al. also show that remote sensing can contribute to planning, but only when results are translated into planning language and linked to the policy cycle . This is why I frame outputs as priority zones and measurable indicators, not only as scientific maps. Kadhim et al. review urban sustainability applications and highlight the need to connect methods to real policy use .</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Li et al. connect historical inequality, urban heat, and health outcomes with spatial models across multiple cities . It provides evidence that heat exposure reflects structural injustice, which supports an equity based policy framing. Yet studies like this can stop before the last step, the design of an implementable planning rule or investment plan. I use it as a warning that correlation is not enough for policy. Martinez and Labib add another warning. They show that NDVI is often treated as a direct measure of green exposure, but it can hide differences between trees, grass, and season . For policy, this means NDVI should be used with care, and ideally combined with tree canopy or land cover when the policy aim is shade and cooling.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>To move from evidence to action, I align the workflow with a simple governance pathway. First, use heat hotspot and greenness deficit maps to select candidate priority areas. Second, connect these zones to specific instruments, minimum greening requirements for new development and targeted canopy programs for existing neighbourhoods . Third, monitor change each year with the same EO indicators, and report progress against SDG 11 targets and London Plan objectives. This creates a repeatable loop that supports transparency and learning, while keeping uncertainty explicit.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">EO applications covered in lecture 4 and their policy relevance</span><span class="ot">"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>%%| label: fig-eo-apps</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  A[Earth Observation Data] --&gt; B[Urban Expansion&lt;br/&gt;Landsat multi-temporal]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  A --&gt; C[Flood Mapping&lt;br/&gt;SAR backscatter]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  A --&gt; D[Forest Monitoring&lt;br/&gt;Decision tree classifier]</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  A --&gt; E[Drought / Fire&lt;br/&gt;Vegetation indices]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  A --&gt; F[Urban Heat&lt;br/&gt;LST from thermal bands]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  B &amp; C &amp; D &amp; E &amp; F --&gt; G{Policy Gap:&lt;br/&gt;Most studies stop here}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  G -.-&gt; H[Who acts on this?&lt;br/&gt;What decision does it support?&lt;br/&gt;Who funds the response?]</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>What struck me more was the gap the lecture kept highlighting between producing a map and actually changing a policy decision. Several studies were discussed that identify a spatial pattern (heat inequality linked to historical redlining, forest loss hotspots, flood exposure) but then stop short of saying what to do about it. The redlining and heat study found that historically disadvantaged neighbourhoods have higher land surface temperatures and more heat-related hospital visits, yet the paper barely mentions policy. This pattern kept coming up: solid spatial analysis, weak policy link.</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>This week helped me see the difference between a technical map and a policy tool. A policy tool needs a clear user, a clear decision point, and a clear statement of uncertainty . The biggest barrier is often not data access. It is skills, time, and coordination across teams. Planning teams, public health teams, and climate teams may use different standards and different timelines. EO products can also be challenged by cloud cover, mixed pixels, and the gap between land surface temperature and lived heat stress <span class="co">[</span><span class="ot">@jensen2016</span><span class="co">]</span>. These issues can reduce trust if they are not communicated simply.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around \$300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="co">[</span><span class="ot">@unep2021</span><span class="co">]</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Fairness is not automatic in data driven policy. If the city targets only the hottest places, it may miss communities with high vulnerability but moderate heat. If it targets only the most deprived places, it may overlook extreme hotspots that create acute health risk. An equity approach should combine exposure and vulnerability, and it should be checked with local knowledge . This is where community engagement and local sensor data can improve the EO screening maps. It also links to the idea that city level strategies often fail at the local scale, unless they are tied to implementable rules and budgets .</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="al">![Urban heat island profile showing how surface and air temperatures vary across different land uses, from rural areas through suburban and urban centres. Source: U.S. EPA (public domain).](img/week4/epa_uhi_profile.jpg)</span>{#fig-uhi-profile}</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>For my own practice, I learned to design EO analysis around a policy workflow, not around a dataset. I will carry this into later work by defining indicators first, then choosing data that can be updated and explained. I also want to extend beyond NDVI by adding tree canopy and impervious surface, so the policy message is closer to shade, cooling, and access to green public space.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Landsat 7 thermal image of Buffalo, New York (3 August 2002). Yellow and red areas indicate higher surface temperatures concentrated in the dense urban core, while blue and green areas show cooler temperatures in parks and surrounding rural land. Source: NASA Earth Observatory.](img/week4/nasa_uhi_buffalo.jpg)</span>{#fig-nasa-buffalo}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>@hansen2013 demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers "where" but not "what next", and that gap is where most studies stop.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>The same disconnect appears in urban heat research. @venter2020 combined Sentinel-2 NDVI with Landsat surface temperature in Oslo and found that greener neighbourhoods were 2 to 3 degrees cooler in summer, with lower-income areas missing out on this cooling benefit. This is a clear equity finding, but translating it into a planting programme requires knowing land ownership, soil conditions, community preferences, and budget, none of which come from a satellite. @deilami2018 reviewed 75 UHI studies and found that most rely on a single daytime Landsat image, which only captures mid-morning conditions on one day. Heat stress actually peaks in the afternoon and evening, so a single snapshot can misrepresent where the worst exposure is. If a city uses that data to decide where to plant trees or install cool surfaces, the priorities could shift depending on when temperature is measured.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Policy hierarchy: from global frameworks to local delivery, and where EO data could plug in</span><span class="ot">"</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>%%| label: fig-policy-layers</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  G[<span class="ot">"</span><span class="st">Global Frameworks&lt;br/&gt;(New Urban Agenda, SDGs, Sendai)</span><span class="ot">"</span>] --&gt; M[<span class="ot">"</span><span class="st">Metropolitan / National Plans&lt;br/&gt;(London Plan, Singapore Green Plan)</span><span class="ot">"</span>]</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  M --&gt; L[<span class="ot">"</span><span class="st">Local Councils&lt;br/&gt;(actual delivery, limited budgets)</span><span class="ot">"</span>]</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  EO[<span class="ot">"</span><span class="st">EO Data&lt;br/&gt;(consistent, repeatable, global)</span><span class="ot">"</span>] -.-&gt; G</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  EO -.-&gt; M</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  EO -.-&gt; L</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  L --&gt; P{{<span class="ot">"</span><span class="st">Problem: who processes&lt;br/&gt;the data at this level?</span><span class="ot">"</span>}}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="co">[</span><span class="ot">@unep2021</span><span class="co">]</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual "we commit to sustainable cities" language in most framework documents.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>The thing that stuck with me most is how often the chain breaks between analysis and action. I kept expecting the case studies to end with a concrete recommendation, like target this neighbourhood or change this planning rule, but most just conclude that a spatial pattern exists. The Cape Town example from the lecture made this even more real. Even when useful data existed, government departments would not share it because they lacked a data sharing agreement. The bottleneck was not technical capacity but institutional coordination.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>This connects to what I wrote in week 1 about the gap between what satellites can measure and what a council actually needs. A few weeks later I think the gap is wider than I expected, because it is not just about spatial resolution or cloud cover. It is about whether anyone in a planning team knows the data exists, has time to process it, and has the authority to act on the results. For my own work I want to keep asking who the user of the output is and what decision it supports, rather than just producing a technically sound map. I am also curious about cities that have actually built EO into routine planning workflows, what institutional setup made that possible, and whether it survived beyond the initial project funding.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

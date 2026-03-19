@@ -18,7 +18,7 @@ In the practical I used SNAP to look at Sentinel-2 imagery of West London and La
 
 ![Cape Town in Landsat 8 true colour composite at 30 m resolution](img/week1/landsat8_true_colour.png){width="100%"}
 
-Something useful I learned in SNAP is that histogram stretching only changes how the image looks on screen. It does not change the actual pixel values. So a nice-looking image is not necessarily better data [@jensen2016].
+Something useful I learned in SNAP is that histogram stretching only changes how the image looks on screen. It does not change the actual pixel values. So a nice-looking image is not necessarily better data.
 
 ![SNAP histogram and contrast stretch controls](img/SNAP%20histogram.png){width="100%"}
 
