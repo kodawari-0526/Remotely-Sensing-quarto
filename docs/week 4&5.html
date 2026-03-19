@@ -369,12 +369,22 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 6</span></a>
+  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 7</span></a>
+  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 9</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -424,7 +434,7 @@ div.csl-indent {
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>These two weeks covered how Earth observation connects to policy. Lecture 4 was a broad survey of EO applications, and lecture 5 zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as <span class="citation" data-cites="hansen2013">(<a href="references.html#ref-hansen2013" role="doc-biblioref"><strong>hansen2013?</strong></a>)</span> showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</p>
+<p>This week covered how Earth observation connects to policy. Lecture was a broad survey of EO applications, and zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as <span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span> showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-eo-apps" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -443,14 +453,14 @@ div.csl-indent {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eo-apps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: EO applications covered in lecture 4 and their policy relevance
+Figure&nbsp;5.1: EO applications covered and their policy relevance
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>What struck me more was the gap the lecture kept highlighting between producing a map and actually changing a policy decision. Several studies were discussed that identify a spatial pattern (heat inequality linked to historical redlining, forest loss hotspots, flood exposure) but then stop short of saying what to do about it. The redlining and heat study found that historically disadvantaged neighbourhoods have higher land surface temperatures and more heat-related hospital visits, yet the paper barely mentions policy. This pattern kept coming up: solid spatial analysis, weak policy link.</p>
-<p>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around $300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref"><strong>unep2021?</strong></a>)</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</p>
+<p>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around $300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref">United Nations Environment Programme &amp; RMI, 2021</a>)</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</p>
 <div id="fig-uhi-profile" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uhi-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -474,7 +484,7 @@ Figure&nbsp;5.3: Landsat 7 thermal image of Buffalo, New York (3 August 2002). Y
 </section>
 <section id="applications" class="level2">
 <h2 class="anchored" data-anchor-id="applications">Applications</h2>
-<p><span class="citation" data-cites="hansen2013">(<a href="references.html#ref-hansen2013" role="doc-biblioref"><strong>hansen2013?</strong></a>)</span> demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers “where” but not “what next”, and that gap is where most studies stop.</p>
+<p><span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span> demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers “where” but not “what next”, and that gap is where most studies stop.</p>
 <p>The same disconnect appears in urban heat research. <span class="citation" data-cites="venter2020">Venter et al. (<a href="references.html#ref-venter2020" role="doc-biblioref">2020</a>)</span> combined Sentinel-2 NDVI with Landsat surface temperature in Oslo and found that greener neighbourhoods were 2 to 3 degrees cooler in summer, with lower-income areas missing out on this cooling benefit. This is a clear equity finding, but translating it into a planting programme requires knowing land ownership, soil conditions, community preferences, and budget, none of which come from a satellite. <span class="citation" data-cites="deilami2018">Deilami et al. (<a href="references.html#ref-deilami2018" role="doc-biblioref">2018</a>)</span> reviewed 75 UHI studies and found that most rely on a single daytime Landsat image, which only captures mid-morning conditions on one day. Heat stress actually peaks in the afternoon and evening, so a single snapshot can misrepresent where the worst exposure is. If a city uses that data to decide where to plant trees or install cool surfaces, the priorities could shift depending on when temperature is measured.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -499,7 +509,7 @@ Figure&nbsp;5.4: Policy hierarchy: from global frameworks to local delivery, and
 </div>
 </div>
 </div>
-<p>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref"><strong>unep2021?</strong></a>)</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual “we commit to sustainable cities” language in most framework documents.</p>
+<p>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref">United Nations Environment Programme &amp; RMI, 2021</a>)</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual “we commit to sustainable cities” language in most framework documents.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
@@ -512,6 +522,12 @@ Figure&nbsp;5.4: Policy hierarchy: from global frameworks to local delivery, and
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-deilami2018" class="csl-entry" role="listitem">
 Deilami, K., Kamruzzaman, M., &amp; Liu, Y. (2018). Urban heat island effect: A systematic review of spatio-temporal factors, data, methods, and mitigation measures. <em>International Journal of Applied Earth Observation and Geoinformation</em>, <em>67</em>, 185–196. <a href="https://doi.org/10.1016/j.jag.2017.12.009">https://doi.org/10.1016/j.jag.2017.12.009</a>
+</div>
+<div id="ref-hansen2013" class="csl-entry" role="listitem">
+Hansen, M. C., Potapov, P. V., Moore, R., Hancher, M., Turubanova, S. A., Tyukavina, A., Thau, D., Stehman, S. V., Goetz, S. J., Loveland, T. R., Kommareddy, A., Egorov, A., Chini, L., Justice, C. O., &amp; Townshend, J. R. G. (2013). High-resolution global maps of 21st-century forest cover change. <em>Science</em>, <em>342</em>(6160), 850–853. <a href="https://doi.org/10.1126/science.1244693">https://doi.org/10.1126/science.1244693</a>
+</div>
+<div id="ref-unep2021" class="csl-entry" role="listitem">
+United Nations Environment Programme, &amp; RMI. (2021). <em>Beating the heat: A sustainable cooling handbook for cities</em>. <a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities">https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities</a>
 </div>
 <div id="ref-venter2020" class="csl-entry" role="listitem">
 Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastructure to urban heat and human health risk mitigation in oslo, norway. <em>Science of The Total Environment</em>, <em>709</em>, 138846. <a href="https://doi.org/10.1016/j.scitotenv.2019.138846">https://doi.org/10.1016/j.scitotenv.2019.138846</a>
@@ -996,8 +1012,8 @@ Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastruc
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week 6.html" class="pagination-link" aria-label="week 6">
-        <span class="nav-page-text"><span class="chapter-title">week 6</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week 6.html" class="pagination-link" aria-label="Week 6">
+        <span class="nav-page-text"><span class="chapter-title">Week 6</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1007,10 +1023,10 @@ Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastruc
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>These two weeks covered how Earth observation connects to policy. Lecture 4 was a broad survey of EO applications, and lecture 5 zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as @hansen2013 showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This week covered how Earth observation connects to policy. Lecture was a broad survey of EO applications, and zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as @hansen2013 showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">EO applications covered in lecture 4 and their policy relevance</span><span class="ot">"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">EO applications covered and their policy relevance</span><span class="ot">"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>%%| label: fig-eo-apps</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  A[Earth Observation Data] --&gt; B[Urban Expansion&lt;br/&gt;Landsat multi-temporal]</span>

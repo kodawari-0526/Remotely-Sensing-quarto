@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>week 6 – CASA0023 Learning Diary</title>
+<title>Week 6 – CASA0023 Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,6 +130,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -285,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 6.html"><span class="chapter-title">week 6</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 6.html"><span class="chapter-title">Week 6</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -321,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -346,12 +369,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">week 6</span></a>
+  <a href="./week 6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 6</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 7</span></a>
+  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -365,8 +388,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -374,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">week 6</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Week 6</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -391,10 +422,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This week introduced Google Earth Engine (GEE) as a cloud platform for remote sensing. Instead of downloading scenes to my own computer, I write JavaScript in the browser and send instructions to Google’s servers, where the imagery is stored and processed <span class="citation" data-cites="gorelick2017">(<a href="references.html#ref-gorelick2017" role="doc-biblioref">Gorelick et al., 2017</a>)</span>. After weeks of working in SNAP and R, this felt like a real change in workflow. Much of the time that used to go into finding, downloading and preparing images can now be reduced to a short script.</p>
+<p>The key idea from the lecture was the difference between client and server. In GEE, anything that starts with <code>ee</code> is a server-side object, not data sitting inside the script. That is why <code>map()</code> is more useful than a normal <code>for</code> loop. The lecture also kept coming back to <code>filter</code>, <code>scale</code>, <code>reducer</code> and <code>join</code>. <code>filterDate()</code> and <code>filterBounds()</code> cut an image collection down to the scenes I need. Reducers such as <code>median()</code> or <code>mean()</code> turn many images or many pixels into something smaller and easier to analyse. <code>Join</code> links collections by attribute or location. The point that stayed with me most, though, was <code>scale</code>. It is not just about how the map looks on screen. It changes the values returned by the analysis because GEE resamples to the output resolution. In my own test on one London point, the NIR value changed from 0.578 at 30 m to 0.509 at 1000 m, which made the effect very concrete (<a href="#fig-scale" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>).</p>
+<p>For the practical I built a summer 2025 Landsat 9 NDVI composite for London (<a href="#fig-truecolour" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>; <a href="#fig-ndvi" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>). I filtered the collection by date and location, applied the Collection 2 scale factors, took a median composite, clipped it, and then calculated NDVI (<a href="#fig-gee-workflow" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>). The median composite was a sensible choice here because I wanted one clean image rather than a single scene with cloud or seam problems. The NDVI map behaves as expected: large green spaces such as Richmond Park and Hampstead Heath stand out clearly, while dense built-up areas are lower. I used a simple bounding rectangle because this was an introductory exercise and I wanted to focus on the GEE workflow. For policy-facing work, I would replace the rectangle with a Greater London boundary.</p>
+<div id="fig-london-context" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-london-context-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week6/london_iss_context.jpg" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-london-context-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Central London seen from the International Space Station. The Thames and major parks are easy to distinguish. Source: NASA Earth Observatory, 2 April 2005.
+</figcaption>
+</figure>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Introductory London bounding-box ROI from Landsat 9</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> london_bbox <span class="op">=</span> ee<span class="op">.</span><span class="at">Geometry</span><span class="op">.</span><span class="fu">Rectangle</span>([<span class="op">-</span><span class="fl">0.51</span><span class="op">,</span> <span class="fl">51.28</span><span class="op">,</span> <span class="fl">0.33</span><span class="op">,</span> <span class="fl">51.69</span>])<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> l9 <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'LANDSAT/LC09/C02/T1_L2'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2025-06-01'</span><span class="op">,</span> <span class="st">'2025-09-01'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterBounds</span>(london_bbox)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(<span class="kw">function</span>(img){</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> opt <span class="op">=</span> img<span class="op">.</span><span class="fu">select</span>([<span class="st">'SR_B1'</span><span class="op">,</span><span class="st">'SR_B2'</span><span class="op">,</span><span class="st">'SR_B3'</span><span class="op">,</span><span class="st">'SR_B4'</span><span class="op">,</span><span class="st">'SR_B5'</span><span class="op">,</span><span class="st">'SR_B6'</span><span class="op">,</span><span class="st">'SR_B7'</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                 <span class="op">.</span><span class="fu">multiply</span>(<span class="fl">0.0000275</span>)<span class="op">.</span><span class="fu">add</span>(<span class="op">-</span><span class="fl">0.2</span>)<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> img<span class="op">.</span><span class="fu">addBands</span>(opt<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> composite <span class="op">=</span> l9<span class="op">.</span><span class="fu">median</span>()<span class="op">.</span><span class="fu">clip</span>(london_bbox)<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> ndvi <span class="op">=</span> composite<span class="op">.</span><span class="fu">normalizedDifference</span>([<span class="st">'SR_B5'</span><span class="op">,</span><span class="st">'SR_B4'</span>])<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">setCenter</span>(<span class="op">-</span><span class="fl">0.118</span><span class="op">,</span> <span class="fl">51.509</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(composite<span class="op">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">bands</span><span class="op">:</span>[<span class="st">'SR_B4'</span><span class="op">,</span><span class="st">'SR_B3'</span><span class="op">,</span><span class="st">'SR_B2'</span>]<span class="op">,</span> <span class="dt">min</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="fl">0.3</span>}<span class="op">,</span> <span class="st">'True Colour'</span>)<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(ndvi<span class="op">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">min</span><span class="op">:-</span><span class="fl">0.1</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span><span class="fl">0.7</span><span class="op">,</span> <span class="dt">palette</span><span class="op">:</span>[<span class="st">'white'</span><span class="op">,</span><span class="st">'yellow'</span><span class="op">,</span><span class="st">'green'</span><span class="op">,</span><span class="st">'darkgreen'</span>]}<span class="op">,</span> <span class="st">'NDVI'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-truecolour" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-truecolour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week6/week6_truecolour_london.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-truecolour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: True-colour Landsat 9 composite of London, summer 2025
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ndvi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week6/week6_ndvi_london.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: NDVI from the same composite. Parks like Richmond and Hampstead Heath stand out clearly in dark green.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="fig-scale" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week6/week6_scale_comparison.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Scale comparison: the same NIR band sampled at a single London point returns different values depending on the scale parameter. At 1000 m the value drops noticeably because nearby non-vegetation pixels get averaged in.
+</figcaption>
+</figure>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-gee-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gee-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-gee-workflow">flowchart LR
+  A[ImageCollection&lt;br/&gt;Landsat 9] --&gt; B[filterDate&lt;br/&gt;filterBounds]
+  B --&gt; C[.map scale factors]
+  C --&gt; D[.median .clip]
+  D --&gt; E[NDVI]
+  E --&gt; F[Map.addLayer&lt;br/&gt;or Export]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gee-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: GEE workflow to London NDVI composite
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">Applications</h2>
+<p><span class="citation" data-cites="tamiminia2020">Tamiminia et al. (<a href="references.html#ref-tamiminia2020" role="doc-biblioref">2020</a>)</span> reviewed more than 300 GEE studies and found that land cover change, vegetation monitoring and hydrology were among the most common uses. That pattern makes sense because GEE is strongest when a project needs a long image archive and repeated pre-processing. <span class="citation" data-cites="sidhu2018">Sidhu et al. (<a href="references.html#ref-sidhu2018" role="doc-biblioref">2018</a>)</span> used GEE to map land cover change in Singapore over three decades by combining Landsat scenes, temporal filters and classification. A workflow like that would still be possible in local software, but it would involve much more downloading, sorting and pre-processing before the real analysis even begins. GEE shifts more of the effort from data handling to method design.</p>
+<p>Urban heat is another good fit. Cities need repeatable summer imagery, comparable outputs across years, and a way to combine temperature with land cover or greenness. London already has a Landsat-based map of major summer heat spots through the London Datastore <span class="citation" data-cites="majorsu">(<a href="references.html#ref-majorsu" role="doc-biblioref">London Datastore, n.d.</a>)</span>, and broader urban climate research shows that greener neighbourhoods can reduce heat exposure and health risk <span class="citation" data-cites="venter2020">(<a href="references.html#ref-venter2020" role="doc-biblioref">Venter et al., 2020</a>)</span>. GEE could support this kind of monitoring well, but the lecture also showed that fast processing does not remove basic analytical choices. Boundaries, scale, season and the exact definition of the indicator still matter. There is also the wider issue that GEE is controlled by one platform, which means convenience comes with dependence <span class="citation" data-cites="mutanga2019 amani2020">(<a href="references.html#ref-amani2020" role="doc-biblioref">Amani et al., 2020</a>; <a href="references.html#ref-mutanga2019" role="doc-biblioref">Mutanga &amp; Kumar, 2019</a>)</span>.</p>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<p>What I found most useful this week was not just that GEE is fast, but that it makes it easier to test an idea quickly. That matters for project work, because I can now screen a study area or build a first image product without spending most of my time preparing data. At the same time, this week also made me more cautious. GEE makes it very easy to produce a map that looks convincing, even when the boundary or scale is not quite right. For my own work, I can already see a sensible division of labour: use GEE to explore, subset and build quick image products, then move to R or Python when I need more control, clearer documentation or a more detailed model. That feels like the real lesson from this week.</p>
 
 
 <!-- -->
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-amani2020" class="csl-entry" role="listitem">
+Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A., Mirmazloumi, S. M., Moghaddam, S. M. A., Mahdavi, S., Ghahremanloo, M., Parsian, S., Wu, Q., &amp; Brisco, B. (2020). Google earth engine cloud computing platform for remote sensing big data applications: A comprehensive review. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, <em>13</em>, 5326–5350. <a href="https://doi.org/10.1109/JSTARS.2020.3021052">https://doi.org/10.1109/JSTARS.2020.3021052</a>
+</div>
+<div id="ref-gorelick2017" class="csl-entry" role="listitem">
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., &amp; Moore, R. (2017). Google earth engine: Planetary-scale geospatial analysis for everyone. <em>Remote Sensing of Environment</em>, <em>202</em>, 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+</div>
+<div id="ref-majorsu" class="csl-entry" role="listitem">
+London Datastore. (n.d.). <em>Major Summer Heat Spots using Landsat-8 Thermal Satellite data</em>. Retrieved <a href="https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw">https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw</a>
+</div>
+<div id="ref-mutanga2019" class="csl-entry" role="listitem">
+Mutanga, O., &amp; Kumar, L. (2019). Google earth engine applications. <em>Remote Sensing</em>, <em>11</em>(5), 591. <a href="https://doi.org/10.3390/rs11050591">https://doi.org/10.3390/rs11050591</a>
+</div>
+<div id="ref-sidhu2018" class="csl-entry" role="listitem">
+Sidhu, N., Pebesma, E., &amp; Câmara, G. (2018). Using google earth engine to detect land cover change: Singapore as a use case. <em>European Journal of Remote Sensing</em>, <em>51</em>(1), 486–500. <a href="https://doi.org/10.1080/22797254.2018.1451782">https://doi.org/10.1080/22797254.2018.1451782</a>
+</div>
+<div id="ref-tamiminia2020" class="csl-entry" role="listitem">
+Tamiminia, H., Salehi, B., Mahdianpari, M., Quackenbush, L., Adeli, S., &amp; Brisco, B. (2020). Google earth engine for geo-big data applications: A meta-analysis and systematic review. <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, <em>164</em>, 152–170. <a href="https://doi.org/10.1016/j.isprsjprs.2020.04.001">https://doi.org/10.1016/j.isprsjprs.2020.04.001</a>
+</div>
+<div id="ref-venter2020" class="csl-entry" role="listitem">
+Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastructure to urban heat and human health risk mitigation in oslo, norway. <em>Science of The Total Environment</em>, <em>709</em>, 138846. <a href="https://doi.org/10.1016/j.scitotenv.2019.138846">https://doi.org/10.1016/j.scitotenv.2019.138846</a>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -873,14 +1032,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week 7.html" class="pagination-link" aria-label="week 7">
-        <span class="nav-page-text"><span class="chapter-title">week 7</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week 7.html" class="pagination-link" aria-label="Week 7">
+        <span class="nav-page-text"><span class="chapter-title">Week 7</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "week 6"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 6"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>This week introduced Google Earth Engine (GEE) as a cloud platform for remote sensing. Instead of downloading scenes to my own computer, I write JavaScript in the browser and send instructions to Google's servers, where the imagery is stored and processed <span class="co">[</span><span class="ot">@gorelick2017</span><span class="co">]</span>. After weeks of working in SNAP and R, this felt like a real change in workflow. Much of the time that used to go into finding, downloading and preparing images can now be reduced to a short script.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>The key idea from the lecture was the difference between client and server. In GEE, anything that starts with <span class="in">`ee`</span> is a server-side object, not data sitting inside the script. That is why <span class="in">`map()`</span> is more useful than a normal <span class="in">`for`</span> loop. The lecture also kept coming back to <span class="in">`filter`</span>, <span class="in">`scale`</span>, <span class="in">`reducer`</span> and <span class="in">`join`</span>. <span class="in">`filterDate()`</span> and <span class="in">`filterBounds()`</span> cut an image collection down to the scenes I need. Reducers such as <span class="in">`median()`</span> or <span class="in">`mean()`</span> turn many images or many pixels into something smaller and easier to analyse. <span class="in">`Join`</span> links collections by attribute or location. The point that stayed with me most, though, was <span class="in">`scale`</span>. It is not just about how the map looks on screen. It changes the values returned by the analysis because GEE resamples to the output resolution. In my own test on one London point, the NIR value changed from 0.578 at 30 m to 0.509 at 1000 m, which made the effect very concrete (@fig-scale).</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>For the practical I built a summer 2025 Landsat 9 NDVI composite for London (@fig-truecolour; @fig-ndvi). I filtered the collection by date and location, applied the Collection 2 scale factors, took a median composite, clipped it, and then calculated NDVI (@fig-gee-workflow). The median composite was a sensible choice here because I wanted one clean image rather than a single scene with cloud or seam problems. The NDVI map behaves as expected: large green spaces such as Richmond Park and Hampstead Heath stand out clearly, while dense built-up areas are lower. I used a simple bounding rectangle because this was an introductory exercise and I wanted to focus on the GEE workflow. For policy-facing work, I would replace the rectangle with a Greater London boundary.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="al">![Central London seen from the International Space Station. The Thames and major parks are easy to distinguish. Source: NASA Earth Observatory, 2 April 2005.](img/week6/london_iss_context.jpg)</span>{#fig-london-context width="85%"}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">``` javascript</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">// Introductory London bounding-box ROI from Landsat 9</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> london_bbox <span class="op">=</span> ee<span class="op">.</span><span class="fu">Geometry</span><span class="op">.</span><span class="fu">Rectangle</span><span class="op">([-</span><span class="fl">0.51</span><span class="op">,</span> <span class="fl">51.28</span><span class="op">,</span> <span class="fl">0.33</span><span class="op">,</span> <span class="fl">51.69</span><span class="op">]);</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> l9 <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span><span class="op">(</span><span class="er">'</span>LANDSAT<span class="op">/</span>LC09<span class="op">/</span>C02<span class="op">/</span>T1_L2<span class="er">'</span><span class="op">)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterDate</span><span class="op">(</span><span class="er">'</span><span class="dv">2025</span><span class="op">-</span><span class="bn">06</span><span class="op">-</span><span class="bn">01</span><span class="er">'</span><span class="op">,</span> <span class="er">'</span><span class="dv">2025</span><span class="op">-</span><span class="er">09</span><span class="op">-</span><span class="bn">01</span><span class="er">'</span><span class="op">)</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterBounds</span><span class="op">(</span>london_bbox<span class="op">)</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span><span class="op">(</span><span class="fu">function</span><span class="op">(</span>img<span class="op">){</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> opt <span class="op">=</span> img<span class="op">.</span><span class="fu">select</span><span class="op">([</span><span class="er">'</span>SR_B1<span class="ch">','</span>SR_B2<span class="ch">','</span>SR_B3<span class="ch">','</span>SR_B4<span class="ch">','</span>SR_B5<span class="ch">','</span>SR_B6<span class="ch">','</span>SR_B7<span class="er">'</span><span class="op">])</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                 <span class="op">.</span><span class="fu">multiply</span><span class="op">(</span><span class="fl">0.0000275</span><span class="op">).</span><span class="fu">add</span><span class="op">(-</span><span class="fl">0.2</span><span class="op">);</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> img<span class="op">.</span><span class="fu">addBands</span><span class="op">(</span>opt<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="kw">true</span><span class="op">);</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">});</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> composite <span class="op">=</span> l9<span class="op">.</span><span class="fu">median</span><span class="op">().</span><span class="fu">clip</span><span class="op">(</span>london_bbox<span class="op">);</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> ndvi <span class="op">=</span> composite<span class="op">.</span><span class="fu">normalizedDifference</span><span class="op">([</span><span class="er">'</span>SR_B5<span class="ch">','</span>SR_B4<span class="er">'</span><span class="op">]);</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">setCenter</span><span class="op">(-</span><span class="fl">0.118</span><span class="op">,</span> <span class="fl">51.509</span><span class="op">,</span> <span class="dv">10</span><span class="op">);</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span><span class="op">(</span>composite<span class="op">,</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>bands<span class="op">:[</span><span class="er">'</span>SR_B4<span class="ch">','</span>SR_B3<span class="ch">','</span>SR_B2<span class="er">'</span><span class="op">],</span> min<span class="op">:</span><span class="dv">0</span><span class="op">,</span> max<span class="op">:</span><span class="fl">0.3</span><span class="op">},</span> <span class="er">'</span>True Colour<span class="er">'</span><span class="op">);</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span><span class="op">(</span>ndvi<span class="op">,</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>min<span class="op">:-</span><span class="fl">0.1</span><span class="op">,</span> max<span class="op">:</span><span class="fl">0.7</span><span class="op">,</span> palette<span class="op">:[</span><span class="er">'</span>white<span class="ch">','</span>yellow<span class="ch">','</span>green<span class="ch">','</span>darkgreen<span class="er">'</span><span class="op">]},</span> <span class="er">'</span>NDVI<span class="er">'</span><span class="op">);</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol="2"}</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="al">![True-colour Landsat 9 composite of London, summer 2025](img/week6/week6_truecolour_london.png)</span>{#fig-truecolour}</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="al">![NDVI from the same composite. Parks like Richmond and Hampstead Heath stand out clearly in dark green.](img/week6/week6_ndvi_london.png)</span>{#fig-ndvi}</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="al">![Scale comparison: the same NIR band sampled at a single London point returns different values depending on the scale parameter. At 1000 m the value drops noticeably because nearby non-vegetation pixels get averaged in.](img/week6/week6_scale_comparison.png)</span>{#fig-scale width="70%"}</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">GEE workflow to London NDVI composite</span><span class="ot">"</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>%%| label: fig-gee-workflow</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  A[ImageCollection&lt;br/&gt;Landsat <span class="dv">9</span>] --&gt; B[filterDate&lt;br/&gt;filterBounds]</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  B --&gt; C[.<span class="fu">map</span> scale factors]</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  C --&gt; D[.median .clip]</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  D --&gt; E[NDVI]</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  E --&gt; F[Map.addLayer&lt;br/&gt;<span class="ot">or</span> Export]</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>@tamiminia2020 reviewed more than 300 GEE studies and found that land cover change, vegetation monitoring and hydrology were among the most common uses. That pattern makes sense because GEE is strongest when a project needs a long image archive and repeated pre-processing. @sidhu2018 used GEE to map land cover change in Singapore over three decades by combining Landsat scenes, temporal filters and classification. A workflow like that would still be possible in local software, but it would involve much more downloading, sorting and pre-processing before the real analysis even begins. GEE shifts more of the effort from data handling to method design.</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>Urban heat is another good fit. Cities need repeatable summer imagery, comparable outputs across years, and a way to combine temperature with land cover or greenness. London already has a Landsat-based map of major summer heat spots through the London Datastore <span class="co">[</span><span class="ot">@majorsu</span><span class="co">]</span>, and broader urban climate research shows that greener neighbourhoods can reduce heat exposure and health risk <span class="co">[</span><span class="ot">@venter2020</span><span class="co">]</span>. GEE could support this kind of monitoring well, but the lecture also showed that fast processing does not remove basic analytical choices. Boundaries, scale, season and the exact definition of the indicator still matter. There is also the wider issue that GEE is controlled by one platform, which means convenience comes with dependence <span class="co">[</span><span class="ot">@mutanga2019; @amani2020</span><span class="co">]</span>.</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>What I found most useful this week was not just that GEE is fast, but that it makes it easier to test an idea quickly. That matters for project work, because I can now screen a study area or build a first image product without spending most of my time preparing data. At the same time, this week also made me more cautious. GEE makes it very easy to produce a map that looks convincing, even when the boundary or scale is not quite right. For my own work, I can already see a sensible division of labour: use GEE to explore, subset and build quick image products, then move to R or Python when I need more control, clearer documentation or a more detailed model. That feels like the real lesson from this week.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

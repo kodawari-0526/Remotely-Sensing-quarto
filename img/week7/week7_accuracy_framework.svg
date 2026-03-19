@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <rect width="1400" height="820" fill="#fcfbf7"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#1f2a44">Reading Classification Accuracy</text>
+  <text x="700" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#51607a">Why overall accuracy is useful, but not the whole story</text>
+
+  <defs>
+    <style>
+      .title { font-family: "Segoe UI", Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #1f2a44; }
+      .body { font-family: "Segoe UI", Arial, sans-serif; font-size: 18px; fill: #31405c; }
+      .small { font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; fill: #61708a; }
+      .box { rx: 22; ry: 22; stroke: #d6d9df; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="box" x="80" y="170" width="560" height="520" fill="#ffffff"/>
+  <text class="title" x="360" y="220" text-anchor="middle">Confusion Matrix Logic</text>
+
+  <rect x="170" y="280" width="160" height="70" fill="#dff3df" stroke="#9bc39b" stroke-width="2"/>
+  <rect x="330" y="280" width="160" height="70" fill="#ffe1de" stroke="#dd9e96" stroke-width="2"/>
+  <rect x="170" y="350" width="160" height="70" fill="#ffe1de" stroke="#dd9e96" stroke-width="2"/>
+  <rect x="330" y="350" width="160" height="70" fill="#dfe8ff" stroke="#9eb4e7" stroke-width="2"/>
+
+  <text class="body" x="250" y="323" text-anchor="middle">True Positive</text>
+  <text class="body" x="410" y="323" text-anchor="middle">False Positive</text>
+  <text class="body" x="250" y="393" text-anchor="middle">False Negative</text>
+  <text class="body" x="410" y="393" text-anchor="middle">True Negative</text>
+
+  <text class="body" x="250" y="258" text-anchor="middle">Predicted class</text>
+  <text class="body" x="410" y="258" text-anchor="middle">Predicted other</text>
+  <text class="body" transform="translate(130 330) rotate(-90)" text-anchor="middle">Ground truth class</text>
+  <text class="body" transform="translate(130 400) rotate(-90)" text-anchor="middle">Ground truth other</text>
+
+  <text class="body" x="360" y="490" text-anchor="middle">Producer's accuracy = TP / (TP + FN)</text>
+  <text class="small" x="360" y="520" text-anchor="middle">Ground-truth perspective: how much of the real class was captured?</text>
+  <text class="body" x="360" y="565" text-anchor="middle">User's accuracy = TP / (TP + FP)</text>
+  <text class="small" x="360" y="595" text-anchor="middle">Map-user perspective: when the map says this class, how often is it right?</text>
+  <text class="body" x="360" y="640" text-anchor="middle">Overall accuracy = all correct predictions / all predictions</text>
+
+  <rect class="box" x="740" y="170" width="580" height="520" fill="#ffffff"/>
+  <text class="title" x="1030" y="220" text-anchor="middle">What mattered in the London practical</text>
+
+  <circle cx="800" cy="290" r="10" fill="#1b998b"/>
+  <text class="body" x="830" y="297">Water and woodland are spectrally easier to separate.</text>
+
+  <circle cx="800" cy="360" r="10" fill="#1b998b"/>
+  <text class="body" x="830" y="367">Dense urban and suburban land are harder because London pixels are mixed.</text>
+
+  <circle cx="800" cy="430" r="10" fill="#1b998b"/>
+  <text class="body" x="830" y="437">A high overall accuracy can still hide class-specific confusion.</text>
+
+  <circle cx="800" cy="500" r="10" fill="#1b998b"/>
+  <text class="body" x="830" y="507">Pixel-level train-test splits may inflate performance because neighbouring pixels are similar.</text>
+
+  <rect x="790" y="560" width="480" height="90" rx="18" ry="18" fill="#fff0cb" stroke="#e0c67c" stroke-width="2"/>
+  <text class="title" x="1030" y="600" text-anchor="middle">Interpretation Rule</text>
+  <text class="body" x="1030" y="632" text-anchor="middle">Use overall accuracy as a summary,</text>
+  <text class="body" x="1030" y="658" text-anchor="middle">but always ask which classes are being confused and why.</text>
+
+  <text x="700" y="760" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#4a566d">For this module, a good diary entry should explain the result, comment on its limits, and connect the map to a wider urban question.</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#fbfaf5"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#1f2a44">Week 7 Classification Workflow</text>
+  <text x="700" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#51607a">A simple version of the London practical from image composite to accuracy assessment</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7b879a"/>
+    </marker>
+    <style>
+      .box { rx: 22; ry: 22; stroke: #d6d9df; stroke-width: 2; }
+      .title { font-family: "Segoe UI", Arial, sans-serif; font-size: 23px; font-weight: 700; fill: #1f2a44; }
+      .body { font-family: "Segoe UI", Arial, sans-serif; font-size: 17px; fill: #31405c; }
+      .small { font-family: "Segoe UI", Arial, sans-serif; font-size: 15px; fill: #65728a; }
+    </style>
+  </defs>
+
+  <rect class="box" x="90" y="170" width="250" height="150" fill="#dcecff"/>
+  <text class="title" x="215" y="220" text-anchor="middle">1. Build Image</text>
+  <text class="body" x="215" y="255" text-anchor="middle">Sentinel-2 SR</text>
+  <text class="body" x="215" y="282" text-anchor="middle">cloud mask</text>
+  <text class="body" x="215" y="309" text-anchor="middle">median summer composite</text>
+  <text class="small" x="215" y="342" text-anchor="middle">London bounding box kept from week 6</text>
+
+  <rect class="box" x="410" y="170" width="250" height="150" fill="#e5f6df"/>
+  <text class="title" x="535" y="220" text-anchor="middle">2. Define Classes</text>
+  <text class="body" x="535" y="255" text-anchor="middle">water</text>
+  <text class="body" x="535" y="282" text-anchor="middle">dense urban / suburban</text>
+  <text class="body" x="535" y="309" text-anchor="middle">grass / woodland</text>
+  <text class="small" x="535" y="342" text-anchor="middle">manually drawn training polygons</text>
+
+  <rect class="box" x="730" y="170" width="250" height="150" fill="#fff0cb"/>
+  <text class="title" x="855" y="220" text-anchor="middle">3. Sample Pixels</text>
+  <text class="body" x="855" y="255" text-anchor="middle">Bands: B2 B3 B4</text>
+  <text class="body" x="855" y="282" text-anchor="middle">B8 B11 B12</text>
+  <text class="body" x="855" y="309" text-anchor="middle">sampleRegions at 10 m</text>
+  <text class="small" x="855" y="342" text-anchor="middle">each pixel becomes one training sample</text>
+
+  <rect class="box" x="1050" y="170" width="250" height="150" fill="#f9dfdb"/>
+  <text class="title" x="1175" y="220" text-anchor="middle">4. Split and Train</text>
+  <text class="body" x="1175" y="255" text-anchor="middle">70 / 30 train-test split</text>
+  <text class="body" x="1175" y="282" text-anchor="middle">Random Forest</text>
+  <text class="body" x="1175" y="309" text-anchor="middle">100 trees</text>
+  <text class="small" x="1175" y="342" text-anchor="middle">fit the classifier on the training set</text>
+
+  <line x1="340" y1="245" x2="410" y2="245" stroke="#7b879a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="660" y1="245" x2="730" y2="245" stroke="#7b879a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="980" y1="245" x2="1050" y2="245" stroke="#7b879a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect class="box" x="270" y="445" width="350" height="180" fill="#f5e3ff"/>
+  <text class="title" x="445" y="495" text-anchor="middle">5. Create Classified Map</text>
+  <text class="body" x="445" y="530" text-anchor="middle">apply the model to every pixel</text>
+  <text class="body" x="445" y="557" text-anchor="middle">in the London composite</text>
+  <text class="body" x="445" y="584" text-anchor="middle">and inspect the spatial pattern</text>
+  <text class="small" x="445" y="617" text-anchor="middle">Does the Thames stay water? Do parks remain green?</text>
+
+  <rect class="box" x="780" y="445" width="350" height="180" fill="#dff3f0"/>
+  <text class="title" x="955" y="495" text-anchor="middle">6. Assess Accuracy</text>
+  <text class="body" x="955" y="530" text-anchor="middle">confusion matrix</text>
+  <text class="body" x="955" y="557" text-anchor="middle">overall accuracy</text>
+  <text class="body" x="955" y="584" text-anchor="middle">user's and producer's accuracy</text>
+  <text class="small" x="955" y="617" text-anchor="middle">interpret results with caution because nearby pixels are related</text>
+
+  <line x1="1175" y1="320" x2="1175" y2="390" stroke="#7b879a" stroke-width="4"/>
+  <line x1="1175" y1="390" x2="620" y2="390" stroke="#7b879a" stroke-width="4"/>
+  <line x1="620" y1="390" x2="620" y2="445" stroke="#7b879a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <line x1="1175" y1="320" x2="1175" y2="445" stroke="#7b879a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text x="700" y="705" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#4a566d">The main lesson is that classification is not just an algorithm choice. It depends on class design, training data quality, and the intended use of the map.</text>
+</svg>
