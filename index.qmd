@@ -1,9 +1,21 @@
-# Preface {.unnumbered}
+---
+pagetitle: "CASA0023 Learning Diary"
+---
 
-This is a Quarto book.
+# Remotely Sensing Cities and Environments {.unnumbered}
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+::: lead
+A weekly learning diary for **CASA0023** at UCL, covering remote sensing theory, Earth observation applications, and geospatial data science.
+:::
 
-```{r}
-1 + 1
-```
+::: {.callout-note appearance="minimal"}
+**Author:** ZheXiang Zhou \| **Programme:** MSc Urban Spatial Science, UCL CASA \| **Term 2, 2026**
+:::
+
+This book records what I learned each week, from electromagnetic radiation fundamentals to Google Earth Engine workflows, alongside reflections on how Earth observation data can support urban policy and environmental decisions.
+
+Each entry follows three sections:
+
+-   **Summary**: key concepts, practical outputs, and what I noticed along the way
+-   **Applications**: how the methods appear in published research and policy
+-   **Reflection**: personal takeaways and connections to wider practice

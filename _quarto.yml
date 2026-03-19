@@ -1,25 +1,47 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "learning dairy"
-  author: "Norah Jones"
-  date: "2026/3/19"
+  title: "CASA0023 Learning Diary"
+  author: "ZheXiang Zhou"
+  date: last-modified
+  date-format: "D MMMM YYYY"
+
+  sidebar:
+    collapse-level: 2
+    style: floating
+
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - introduction.qmd
+    - week 1.qmd
+    - week 2.qmd
+    - week 3.qmd
+    - week 4&5.qmd
+    - week 6.qmd
+    - week 7.qmd
     - references.qmd
 
+  page-footer:
+    center: "CASA0023 | UCL Centre for Advanced Spatial Analysis"
+
 bibliography: references.bib
+csl: https://www.zotero.org/styles/apa
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-  pdf:
-    documentclass: scrreprt
+      light: [cosmo, custom.scss]
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+    code-tools: true
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    link-external-newwindow: true
 
 editor: visual
-

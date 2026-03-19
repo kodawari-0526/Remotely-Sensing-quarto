@@ -1,0 +1,8 @@
+---
+title: "Week 2"
+---
+
+```{r}
+xaringanExtra::embed_xaringan(url = "https://kodawari-0526.github.io/Remotely-Sensing-Cities-and-Environments-ppt/#1",
+                              ratio = "16:9")
+```
