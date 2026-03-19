@@ -14,7 +14,7 @@ book:
 
   chapters:
     - index.qmd
-    - introduction.qmd
+    - intro.qmd
     - week 1.qmd
     - week 2.qmd
     - week 3.qmd
