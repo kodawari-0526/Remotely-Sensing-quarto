@@ -1,21 +1,18 @@
 ---
-pagetitle: "CASA0023 Learning Diary"
+title: "Welcome"
+toc: false
 ---
 
-# Remotely Sensing Cities and Environments {.unnumbered}
-
 ::: lead
-A weekly learning diary for **CASA0023** at UCL, covering remote sensing theory, Earth observation applications, and geospatial data science.
+This is my learning diary for CASA0023. It records what I learned each week about remote sensing, from basic sensor concepts to classification, Google Earth Engine, and urban heat.
 :::
 
-::: {.callout-note appearance="minimal"}
-**Author:** ZheXiang Zhou \| **Programme:** MSc Urban Spatial Science, UCL CASA \| **Term 2, 2026**
+The first part of the diary focuses on the basics. It covers electromagnetic radiation, spectral signatures, sensor resolution, correction, and enhancement. These chapters helped me understand that satellite images are not just pictures. They are measurements, and that affects how they should be read and used.
+
+The middle chapters move into workflow and application. They look at how Earth observation can be used in practice, especially with Google Earth Engine and land-cover classification. I also use these chapters to think about what makes an output useful, rather than only whether it looks technically correct.
+
+The final part of the diary brings the earlier topics together through urban heat. This became the clearest applied theme for me because it connects land cover, vegetation, thermal data, scale, and planning. By the end of the term, I was less focused on making maps look good and more focused on what the results could say about London and urban environmental problems.
+
+::: opening-note
+If you want to read the diary from the beginning, start with [About Me](intro.qmd) and [Week 1](week%201.qmd). If you prefer to begin with the most applied chapter and then work backwards through the method sections, [Week 9](week%209.qmd) is the best entry point.
 :::
-
-This book records what I learned each week, from electromagnetic radiation fundamentals to Google Earth Engine workflows, alongside reflections on how Earth observation data can support urban policy and environmental decisions.
-
-Each entry follows three sections:
-
--   **Summary**: key concepts, practical outputs, and what I noticed along the way
--   **Applications**: how the methods appear in published research and policy
--   **Reflection**: personal takeaways and connections to wider practice

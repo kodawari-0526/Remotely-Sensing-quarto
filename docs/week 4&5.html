@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -94,14 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc8a987af0c04ed126583a3be4d7e66c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4b2135033f0636c8298128307f4a9483.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d447660303c5013b4537fbd103b63b3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -130,176 +91,11 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -308,7 +104,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 4&amp;5.html"><span class="chapter-title">Week 4&amp;5</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 4&amp;5.html">Policy Framing (Weeks 4-5)</a></li><li class="breadcrumb-item"><a href="./week 4&amp;5.html"><span class="chapter-title">Week 4&amp;5</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -320,13 +116,10 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">CASA0023 Learning Diary</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -338,8 +131,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remotely Sensing Cities and Environments</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -347,46 +139,90 @@ div.csl-indent {
   <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations (Weeks 1-3)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Policy Framing (Weeks 4-5)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 4&amp;5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 4&amp;5</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Classification and Modelling (Weeks 6-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week8</span></a>
+  <a href="./week 8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Urban Heat and Synthesis (Week 9)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 9</span></a>
+  <a href="./week 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9</span></a>
   </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -412,10 +248,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 4&amp;5.html">Policy Framing (Weeks 4-5)</a></li><li class="breadcrumb-item"><a href="./week 4&amp;5.html"><span class="chapter-title">Week 4&amp;5</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Week 4&amp;5</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title"><span class="chapter-title">Week 4&amp;5</span></h1>
 </div>
 
 
@@ -434,97 +269,80 @@ div.csl-indent {
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This week covered how Earth observation connects to policy. Lecture was a broad survey of EO applications, and zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as <span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span> showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-eo-apps" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>What made it different from the earlier weeks is that it stopped treating Earth observation as the final product. Instead, the lecture kept asking where satellite data might fit inside a real planning process. That changed the question from “what can we map?” to “what decision could this map support?” I found that much more useful than a broad list of applications, because it made me think about who would use the output and what they would actually do with it.</p>
+<div id="fig-week45-ecostress" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eo-apps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-eo-apps">flowchart LR
-  A[Earth Observation Data] --&gt; B[Urban Expansion&lt;br/&gt;Landsat multi-temporal]
-  A --&gt; C[Flood Mapping&lt;br/&gt;SAR backscatter]
-  A --&gt; D[Forest Monitoring&lt;br/&gt;Decision tree classifier]
-  A --&gt; E[Drought / Fire&lt;br/&gt;Vegetation indices]
-  A --&gt; F[Urban Heat&lt;br/&gt;LST from thermal bands]
-  B &amp; C &amp; D &amp; E &amp; F --&gt; G{Policy Gap:&lt;br/&gt;Most studies stop here}
-  G -.-&gt; H[Who acts on this?&lt;br/&gt;What decision does it support?&lt;br/&gt;Who funds the response?]
-</pre>
+<div aria-describedby="fig-week45-ecostress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week4/week45_nasa_ecostress_london.jpg" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week45-ecostress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: NASA ECOSTRESS image of ground surface temperatures in London on 15 July 2022, just before midnight. The persistence of high surface temperatures long after sunset makes the urban heat problem feel much more concrete than a generic temperature chart. Source: NASA/JPL-Caltech <span class="citation" data-cites="nasaecostresslondon2022">(<a href="references.html#ref-nasaecostresslondon2022" role="doc-biblioref">NASA Science, 2022</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<p>I chose London and urban heat as my case study. Heat felt like the clearest policy example because it already sits inside the London Environment Strategy and the city’s wider resilience agenda <span class="citation" data-cites="londone">(<a href="references.html#ref-londone" role="doc-biblioref">London City Hall, n.d.</a>)</span>, and there is already a public Landsat-based heat product through the London Datastore <span class="citation" data-cites="majorsu">(<a href="references.html#ref-majorsu" role="doc-biblioref">London Datastore, n.d.</a>)</span>. That means the challenge is not proving that heat exists. It is deciding how EO can help target action more clearly. I think the most useful starting point would be Landsat land surface temperature for screening hotspots, supported by Sentinel-2 NDVI to show where low greenness might be contributing to heat <span class="citation" data-cites="venter2020">(<a href="references.html#ref-venter2020" role="doc-biblioref">Venter et al., 2020</a>)</span>. That is a much more policy-facing use of EO than simply making another temperature map.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week45-hotspots" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week45-hotspots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week4/week45_london_heatspots_gla.webp" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week45-hotspots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Major summer daytime heat spots across Greater London from the London Datastore. This is a good example of EO already being used to communicate a city-wide policy problem rather than only a technical remote sensing result. Source: Greater London Authority <span class="citation" data-cites="majorsu">(<a href="references.html#ref-majorsu" role="doc-biblioref">London Datastore, n.d.</a>)</span>.
+</figcaption>
+</figure>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eo-apps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: EO applications covered and their policy relevance
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week45-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week45-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week4/fig1_workflow.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week45-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Evidence-to-action loop for a London urban heat policy case. The point is that EO only becomes useful when it feeds into prioritisation, planning action and repeated monitoring rather than stopping at the map.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>What struck me more was the gap the lecture kept highlighting between producing a map and actually changing a policy decision. Several studies were discussed that identify a spatial pattern (heat inequality linked to historical redlining, forest loss hotspots, flood exposure) but then stop short of saying what to do about it. The redlining and heat study found that historically disadvantaged neighbourhoods have higher land surface temperatures and more heat-related hospital visits, yet the paper barely mentions policy. This pattern kept coming up: solid spatial analysis, weak policy link.</p>
-<p>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around $300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref">United Nations Environment Programme &amp; RMI, 2021</a>)</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</p>
-<div id="fig-uhi-profile" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-uhi-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/week4/epa_uhi_profile.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhi-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Urban heat island profile showing how surface and air temperatures vary across different land uses, from rural areas through suburban and urban centres. Source: U.S. EPA (public domain).
-</figcaption>
-</figure>
-</div>
-<div id="fig-nasa-buffalo" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-nasa-buffalo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/week4/nasa_uhi_buffalo.jpg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nasa-buffalo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: Landsat 7 thermal image of Buffalo, New York (3 August 2002). Yellow and red areas indicate higher surface temperatures concentrated in the dense urban core, while blue and green areas show cooler temperatures in parks and surrounding rural land. Source: NASA Earth Observatory.
-</figcaption>
-</figure>
-</div>
+<p>The two images above make the case quite clearly. The GLA map shows that summer heat is not evenly distributed across London, while the workflow figure shows how that evidence could move into planning action (<a href="#fig-week45-hotspots" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>; <a href="#fig-week45-workflow" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>). The main limitation is also clear. Satellite temperature is land surface temperature, not the air temperature a person actually feels in a room, at a bus stop, or in a street canyon. That means EO is very useful as a screening layer, but it is not enough on its own to describe heat-health risk <span class="citation" data-cites="deilami2018">(<a href="references.html#ref-deilami2018" role="doc-biblioref">Deilami et al., 2018</a>)</span>. In policy terms, it should guide attention rather than pretend to settle the whole problem.</p>
 </section>
 <section id="applications" class="level2">
 <h2 class="anchored" data-anchor-id="applications">Applications</h2>
-<p><span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span> demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers “where” but not “what next”, and that gap is where most studies stop.</p>
-<p>The same disconnect appears in urban heat research. <span class="citation" data-cites="venter2020">Venter et al. (<a href="references.html#ref-venter2020" role="doc-biblioref">2020</a>)</span> combined Sentinel-2 NDVI with Landsat surface temperature in Oslo and found that greener neighbourhoods were 2 to 3 degrees cooler in summer, with lower-income areas missing out on this cooling benefit. This is a clear equity finding, but translating it into a planting programme requires knowing land ownership, soil conditions, community preferences, and budget, none of which come from a satellite. <span class="citation" data-cites="deilami2018">Deilami et al. (<a href="references.html#ref-deilami2018" role="doc-biblioref">2018</a>)</span> reviewed 75 UHI studies and found that most rely on a single daytime Landsat image, which only captures mid-morning conditions on one day. Heat stress actually peaks in the afternoon and evening, so a single snapshot can misrepresent where the worst exposure is. If a city uses that data to decide where to plant trees or install cool surfaces, the priorities could shift depending on when temperature is measured.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-policy-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-policy-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-policy-layers">flowchart TD
-  G["Global Frameworks&lt;br/&gt;(New Urban Agenda, SDGs, Sendai)"] --&gt; M["Metropolitan / National Plans&lt;br/&gt;(London Plan, Singapore Green Plan)"]
-  M --&gt; L["Local Councils&lt;br/&gt;(actual delivery, limited budgets)"]
-  EO["EO Data&lt;br/&gt;(consistent, repeatable, global)"] -.-&gt; G
-  EO -.-&gt; M
-  EO -.-&gt; L
-  L --&gt; P{{"Problem: who processes&lt;br/&gt;the data at this level?"}}
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-policy-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: Policy hierarchy: from global frameworks to local delivery, and where EO data could plug in
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref">United Nations Environment Programme &amp; RMI, 2021</a>)</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual “we commit to sustainable cities” language in most framework documents.</p>
+<p>What makes this more than just another urban heat map is the way the data could move through the planning system. A London-wide thermal layer could be summarised by borough, ward, school site, or another practical geography and then turned into a priority list for intervention. That would make it easier to direct greening budgets, shade projects, cool roof pilots, or design guidance reviews to the places that stay hottest. This is the part the lecture kept returning to: a spatial result becomes more useful once it helps answer “what next?” rather than merely showing that a pattern exists. <span class="citation" data-cites="maclachlan2021heat">MacLachlan et al. (<a href="references.html#ref-maclachlan2021heat" role="doc-biblioref">2021</a>)</span> is especially relevant here because it moves beyond detecting heat and asks how spatial evidence can improve the placement of cooling measures. In that sense, the main value of EO is not novelty. It is repeatability. The same summer workflow can be rerun each year and compared over time in a way that is much easier to connect to policy monitoring than a one-off academic map.</p>
+<p>This case also links clearly to the global agendas discussed in the lecture. SDG 11 and the New Urban Agenda are both about safer, more resilient and more inclusive cities, while the Beat the Heat handbook goes a step further by explicitly treating EO heat mapping as part of a city’s baseline evidence for action <span class="citation" data-cites="unep2021">(<a href="references.html#ref-unep2021" role="doc-biblioref">United Nations Environment Programme &amp; RMI, 2021</a>)</span>. That creates a useful policy ladder: global agendas define the broad commitment, metropolitan policy interprets it for London, and EO helps decide where limited local action should begin. The equity side matters here as well. Studies from the United States show that hotter neighbourhoods often overlap with lower tree cover and worse social vulnerability <span class="citation" data-cites="li2022redlining nowak2022">(<a href="references.html#ref-li2022redlining" role="doc-biblioref">Li et al., 2022</a>; <a href="references.html#ref-nowak2022" role="doc-biblioref">Nowak et al., 2022</a>)</span>. I would not copy that argument straight onto London, because the history is different, but it is still a useful warning. A city should not only ask where the hottest pixels are. It should also ask who is least able to cope with that heat.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>The thing that stuck with me most is how often the chain breaks between analysis and action. I kept expecting the case studies to end with a concrete recommendation, like target this neighbourhood or change this planning rule, but most just conclude that a spatial pattern exists. The Cape Town example from the lecture made this even more real. Even when useful data existed, government departments would not share it because they lacked a data sharing agreement. The bottleneck was not technical capacity but institutional coordination.</p>
-<p>This connects to what I wrote in week 1 about the gap between what satellites can measure and what a council actually needs. A few weeks later I think the gap is wider than I expected, because it is not just about spatial resolution or cloud cover. It is about whether anyone in a planning team knows the data exists, has time to process it, and has the authority to act on the results. For my own work I want to keep asking who the user of the output is and what decision it supports, rather than just producing a technically sound map. I am also curious about cities that have actually built EO into routine planning workflows, what institutional setup made that possible, and whether it survived beyond the initial project funding.</p>
+<p>This week made remote sensing feel more realistic to me because the main question was not about classification accuracy or image processing. It was about whether a planning team could actually use the result. For London, the technical side is probably not the biggest barrier. The harder part is deciding the unit of action. Should policy focus on the hottest boroughs, the hottest estates, schools with the least shade, or places where heat overlaps with deprivation and poor housing quality? EO helps with the first question much more than the others unless it is combined with non-EO data. That seems to be the real lesson from the lecture.</p>
+<p>If I took this further into the group assessment, I would keep London and urban heat but be careful not to oversell what satellites can do. A yearly Landsat heat screen, supported by Sentinel-2 greenness data and then linked to vulnerability information, feels realistic and useful. That seems to match the wider point of the lecture: EO becomes most valuable when it enters a routine policy workflow rather than ending as a one-off academic map.</p>
 
-
-<!-- -->
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-deilami2018" class="csl-entry" role="listitem">
 Deilami, K., Kamruzzaman, M., &amp; Liu, Y. (2018). Urban heat island effect: A systematic review of spatio-temporal factors, data, methods, and mitigation measures. <em>International Journal of Applied Earth Observation and Geoinformation</em>, <em>67</em>, 185–196. <a href="https://doi.org/10.1016/j.jag.2017.12.009">https://doi.org/10.1016/j.jag.2017.12.009</a>
 </div>
-<div id="ref-hansen2013" class="csl-entry" role="listitem">
-Hansen, M. C., Potapov, P. V., Moore, R., Hancher, M., Turubanova, S. A., Tyukavina, A., Thau, D., Stehman, S. V., Goetz, S. J., Loveland, T. R., Kommareddy, A., Egorov, A., Chini, L., Justice, C. O., &amp; Townshend, J. R. G. (2013). High-resolution global maps of 21st-century forest cover change. <em>Science</em>, <em>342</em>(6160), 850–853. <a href="https://doi.org/10.1126/science.1244693">https://doi.org/10.1126/science.1244693</a>
+<div id="ref-li2022redlining" class="csl-entry" role="listitem">
+Li, D., Newman, G. D., Wilson, B., Zhang, Y., &amp; Brown, R. D. (2022). Modeling the relationships between historical redlining, urban heat, and heat-related emergency department visits: An examination of 11 texas cities. <em>Environment and Planning B: Urban Analytics and City Science</em>, <em>49</em>(3), 933–952.
+</div>
+<div id="ref-londone" class="csl-entry" role="listitem">
+London City Hall. (n.d.). <em>London Environment Strategy</em>. Retrieved <a href="https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/london-environment-strategy">https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/london-environment-strategy</a>
+</div>
+<div id="ref-majorsu" class="csl-entry" role="listitem">
+London Datastore. (n.d.). <em>Major Summer Heat Spots using Landsat-8 Thermal Satellite data</em>. Retrieved <a href="https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw">https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw</a>
+</div>
+<div id="ref-maclachlan2021heat" class="csl-entry" role="listitem">
+MacLachlan, A., Biggs, E., Roberts, G., &amp; Boruff, B. (2021). Sustainable city planning: A data-driven approach for mitigating urban heat. <em>Frontiers in Built Environment</em>, <em>6</em>, 519599.
+</div>
+<div id="ref-nasaecostresslondon2022" class="csl-entry" role="listitem">
+NASA Science. (2022). <em>NASA’s ECOSTRESS shows overnight heat in london</em>. <a href="https://science.nasa.gov/photojournal/nasas-ecostress-shows-overnight-heat-in-london/">https://science.nasa.gov/photojournal/nasas-ecostress-shows-overnight-heat-in-london/</a>
+</div>
+<div id="ref-nowak2022" class="csl-entry" role="listitem">
+Nowak, D. J., Ellis, A., &amp; Greenfield, E. J. (2022). The disparity in tree cover and ecosystem service values among redlining classes in the united states. <em>Landscape and Urban Planning</em>, <em>221</em>, 104370.
 </div>
 <div id="ref-unep2021" class="csl-entry" role="listitem">
 United Nations Environment Programme, &amp; RMI. (2021). <em>Beating the heat: A sustainable cooling handbook for cities</em>. <a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities">https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities</a>
@@ -538,19 +356,6 @@ Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastruc
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -619,57 +424,6 @@ Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastruc
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1016,63 +770,7 @@ Venter, Z. S., Krog, N. H., &amp; Barton, D. N. (2020). Linking green infrastruc
         <span class="nav-page-text"><span class="chapter-title">Week 6</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 4&amp;5"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This week covered how Earth observation connects to policy. Lecture was a broad survey of EO applications, and zoomed in on urban heat. The general message from lecture 4 is that EO can support many policy areas: urban expansion, forest monitoring, flood mapping, air pollution, drought, and disaster response. For each of these there is usually a straightforward technical workflow. Urban expansion can be tracked with multi-temporal Landsat classification, as in the Perth example where growth followed the mining boom. Floods can be mapped quickly using SAR backscatter because water absorbs the radar signal and appears dark. Forest loss can be detected at global scale, as @hansen2013 showed using 12 years of Landsat data and a decision tree classifier. Drought stress can be picked up through vegetation moisture indices. One hobby project during the California drought even used NDVI to spot residents who were watering their gardens illegally. The technical side is often not the hard part.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">EO applications covered and their policy relevance</span><span class="ot">"</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>%%| label: fig-eo-apps</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  A[Earth Observation Data] --&gt; B[Urban Expansion&lt;br/&gt;Landsat multi-temporal]</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  A --&gt; C[Flood Mapping&lt;br/&gt;SAR backscatter]</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  A --&gt; D[Forest Monitoring&lt;br/&gt;Decision tree classifier]</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  A --&gt; E[Drought / Fire&lt;br/&gt;Vegetation indices]</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  A --&gt; F[Urban Heat&lt;br/&gt;LST from thermal bands]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  B &amp; C &amp; D &amp; E &amp; F --&gt; G{Policy Gap:&lt;br/&gt;Most studies stop here}</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  G -.-&gt; H[Who acts on this?&lt;br/&gt;What decision does it support?&lt;br/&gt;Who funds the response?]</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>What struck me more was the gap the lecture kept highlighting between producing a map and actually changing a policy decision. Several studies were discussed that identify a spatial pattern (heat inequality linked to historical redlining, forest loss hotspots, flood exposure) but then stop short of saying what to do about it. The redlining and heat study found that historically disadvantaged neighbourhoods have higher land surface temperatures and more heat-related hospital visits, yet the paper barely mentions policy. This pattern kept coming up: solid spatial analysis, weak policy link.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Lecture 5 narrowed in on urban heat islands specifically. UHI comes mainly from dark impervious surfaces and lack of vegetation, and the costs are real. Melbourne estimated around \$300 million a year from health, energy, and transport impacts alone. The Beat the Heat handbook <span class="co">[</span><span class="ot">@unep2021</span><span class="co">]</span>, produced after COP26 in Glasgow, was the first full guide on addressing urban heat for local planners. It covers strategies from simple cool roofs to complex district cooling systems, with rough assessments of cost and human resource requirements. What I found useful is that it explicitly includes EO-based heat mapping as part of the baseline assessment, which makes it one of the first major policy documents to do so.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="al">![Urban heat island profile showing how surface and air temperatures vary across different land uses, from rural areas through suburban and urban centres. Source: U.S. EPA (public domain).](img/week4/epa_uhi_profile.jpg)</span>{#fig-uhi-profile}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Landsat 7 thermal image of Buffalo, New York (3 August 2002). Yellow and red areas indicate higher surface temperatures concentrated in the dense urban core, while blue and green areas show cooler temperatures in parks and surrounding rural land. Source: NASA Earth Observatory.](img/week4/nasa_uhi_buffalo.jpg)</span>{#fig-nasa-buffalo}</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>@hansen2013 demonstrated the scale that EO analysis can reach by processing over 650,000 Landsat scenes to map global forest loss and gain between 2000 and 2012. They derived spectral metrics from the raw bands (percentile reflectance values, mean reflectance, band regression slopes) and fed these into a decision tree classifier. The dataset is openly available and updated annually, so in theory any country can monitor deforestation without building its own system. But as the lecture pointed out, a global forest loss layer does not automatically tell a government where to send enforcement or how to prioritise limited funding. The data answers "where" but not "what next", and that gap is where most studies stop.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>The same disconnect appears in urban heat research. @venter2020 combined Sentinel-2 NDVI with Landsat surface temperature in Oslo and found that greener neighbourhoods were 2 to 3 degrees cooler in summer, with lower-income areas missing out on this cooling benefit. This is a clear equity finding, but translating it into a planting programme requires knowing land ownership, soil conditions, community preferences, and budget, none of which come from a satellite. @deilami2018 reviewed 75 UHI studies and found that most rely on a single daytime Landsat image, which only captures mid-morning conditions on one day. Heat stress actually peaks in the afternoon and evening, so a single snapshot can misrepresent where the worst exposure is. If a city uses that data to decide where to plant trees or install cool surfaces, the priorities could shift depending on when temperature is measured.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Policy hierarchy: from global frameworks to local delivery, and where EO data could plug in</span><span class="ot">"</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>%%| label: fig-policy-layers</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  G[<span class="ot">"</span><span class="st">Global Frameworks&lt;br/&gt;(New Urban Agenda, SDGs, Sendai)</span><span class="ot">"</span>] --&gt; M[<span class="ot">"</span><span class="st">Metropolitan / National Plans&lt;br/&gt;(London Plan, Singapore Green Plan)</span><span class="ot">"</span>]</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  M --&gt; L[<span class="ot">"</span><span class="st">Local Councils&lt;br/&gt;(actual delivery, limited budgets)</span><span class="ot">"</span>]</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  EO[<span class="ot">"</span><span class="st">EO Data&lt;br/&gt;(consistent, repeatable, global)</span><span class="ot">"</span>] -.-&gt; G</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  EO -.-&gt; M</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  EO -.-&gt; L</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  L --&gt; P{{<span class="ot">"</span><span class="st">Problem: who processes&lt;br/&gt;the data at this level?</span><span class="ot">"</span>}}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The lecture also walked through how policy is layered. Global agendas like the New Urban Agenda and the SDGs set broad commitments, metropolitan plans turn them into local targets, and councils are left to deliver. A recurring problem is that SDG indicators rely on national statistics collected in different ways, making cross-country comparison unreliable. EO could help by providing consistent measurements, but uptake is slow. The Beat the Heat handbook <span class="co">[</span><span class="ot">@unep2021</span><span class="co">]</span> tries to bridge this by giving planners a practical starting point that includes satellite heat mapping. It is still broad, but it goes further than the usual "we commit to sustainable cities" language in most framework documents.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>The thing that stuck with me most is how often the chain breaks between analysis and action. I kept expecting the case studies to end with a concrete recommendation, like target this neighbourhood or change this planning rule, but most just conclude that a spatial pattern exists. The Cape Town example from the lecture made this even more real. Even when useful data existed, government departments would not share it because they lacked a data sharing agreement. The bottleneck was not technical capacity but institutional coordination.</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>This connects to what I wrote in week 1 about the gap between what satellites can measure and what a council actually needs. A few weeks later I think the gap is wider than I expected, because it is not just about spatial resolution or cloud cover. It is about whether anyone in a planning team knows the data exists, has time to process it, and has the authority to act on the results. For my own work I want to keep asking who the user of the output is and what decision it supports, rather than just producing a technically sound map. I am also curious about cities that have actually built EO into routine planning workflows, what institutional setup made that possible, and whether it survived beyond the initial project funding.</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -4,25 +4,33 @@ project:
 
 book:
   title: "CASA0023 Learning Diary"
+  subtitle: "Remote Sensing, Urban Heat, and Earth Observation Practice"
   author: "ZheXiang Zhou"
-  date: last-modified
-  date-format: "D MMMM YYYY"
 
   sidebar:
     collapse-level: 2
-    style: floating
+    style: docked
+    background: light
 
   chapters:
     - index.qmd
     - intro.qmd
-    - week 1.qmd
-    - week 2.qmd
-    - week 3.qmd
-    - week 4&5.qmd
-    - week 6.qmd
-    - week 7.qmd
-    - week 8.qmd
-    - week 9.qmd
+    - part: "Foundations (Weeks 1-3)"
+      chapters:
+        - week 1.qmd
+        - week 2.qmd
+        - week 3.qmd
+    - part: "Policy Framing (Weeks 4-5)"
+      chapters:
+        - week 4&5.qmd
+    - part: "Classification and Modelling (Weeks 6-8)"
+      chapters:
+        - week 6.qmd
+        - week 7.qmd
+        - week 8.qmd
+    - part: "Urban Heat and Synthesis (Week 9)"
+      chapters:
+        - week 9.qmd
     - references.qmd
 
   page-footer:
@@ -33,17 +41,19 @@ csl: https://www.zotero.org/styles/apa
 
 format:
   html:
-    theme:
-      light: [cosmo, custom.scss]
-      dark: darkly
+    theme: [cosmo, custom.scss]
     toc: true
     toc-depth: 3
     number-sections: false
     code-fold: true
-    code-tools: true
+    code-tools: false
     code-copy: true
     code-overflow: wrap
     smooth-scroll: true
     link-external-newwindow: true
+    grid:
+      sidebar-width: 300px
+      body-width: 920px
+      margin-width: 250px
 
 editor: visual

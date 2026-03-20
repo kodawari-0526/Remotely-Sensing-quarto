@@ -20,42 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,14 +59,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc8a987af0c04ed126583a3be4d7e66c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4b2135033f0636c8298128307f4a9483.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d447660303c5013b4537fbd103b63b3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,169 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -285,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 3.html"><span class="chapter-title">Week 3</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 1.html">Foundations (Weeks 1-3)</a></li><li class="breadcrumb-item"><a href="./week 3.html"><span class="chapter-title">Week 3</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -297,13 +116,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">CASA0023 Learning Diary</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -315,45 +131,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remotely Sensing Cities and Environments</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations (Weeks 1-3)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 3</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Policy Framing (Weeks 4-5)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 4&amp;5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4&amp;5</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Classification and Modelling (Weeks 6-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 6</span></a>
+  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 7</span></a>
+  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Urban Heat and Synthesis (Week 9)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -379,10 +248,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week 1.html">Foundations (Weeks 1-3)</a></li><li class="breadcrumb-item"><a href="./week 3.html"><span class="chapter-title">Week 3</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Week 3</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title"><span class="chapter-title">Week 3</span></h1>
 </div>
 
 
@@ -401,48 +269,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This week focused on image corrections and image enhancement for remote sensing analysis. The lecture explained why raw pixel values are not stable across space and time. Geometric correction aligns an image to the ground so that each pixel is in the right place. This can involve ground control points, a transformation model, and resampling to a common grid <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>)</span>. Atmospheric correction reduces scattering and absorption so values are closer to surface reflectance <span class="citation" data-cites="radiativ2013">(<a href="references.html#ref-radiativ2013" role="doc-biblioref"><strong>radiativ2013?</strong></a>)</span>. This supports fair comparison across dates and sensors and helps change analysis. The lecture also introduced analysis ready data, where key corrections are already applied, but the user still needs to understand what the product includes and what limits remain <span class="citation" data-cites="ceosana">(<a href="references.html#ref-ceosana" role="doc-biblioref"><strong>ceosana?</strong></a>)</span>.</p>
-<p>In the practical I used Landsat Collection 2 Level 2 surface reflectance for Cape Town <span class="citation" data-cites="landsat2022">(<a href="references.html#ref-landsat2022" role="doc-biblioref"><strong>landsat2022?</strong></a>)</span>. I loaded only the surface reflectance bands and clipped them to my study area polygon. My shapefile had a missing coordinate system, so I assigned WGS84 and then transformed it to the Landsat projection before crop and mask. After clipping I created several enhancement layers. I calculated NDVI from the red and near infrared bands to describe vegetation activity <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>)</span>. The NDVI map shows higher values in the mountain and green areas and lower values over water and dense built surfaces.</p>
-<p><img src="img/week3/week3_ndvi.png" class="img-fluid" style="width:100.0%"></p>
-<p>I then applied a vegetation mask using an NDVI threshold of 0.2 to separate likely vegetation from other land covers. This mask is simple and fast, but it can include false positives where soil is bright or where shadows change the index <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>)</span>.</p>
-<p><img src="img/week3/week3_vegmask.png" class="img-fluid" style="width:100.0%"></p>
-<p>Next I tested spatial filtering on the red band. A low pass 3 by 3 mean filter reduced local noise and made broad patterns clearer. A high pass Laplacian filter highlighted edges, which made coastlines and sharp land cover boundaries more visible.</p>
-<p><img src="img/week3/week3_filter_smooth_red.png" class="img-fluid" style="width:100.0%"> <img src="img/week3/week3_filter_edges_red.png" class="img-fluid" style="width:100.0%"></p>
-<p>I also computed a texture proxy using a 7 by 7 local standard deviation. This layer emphasised heterogeneous urban fabric and mixed surfaces. Finally I fused the surface reflectance bands with the texture layer and ran PCA. The PCA composite increased contrast between major surface types and showed that combining spectral and spatial features can reveal structure that is not clear in one band.</p>
-<p><img src="img/week3/week3_pca_rgb.png" class="img-fluid" style="width:100.0%"> <img src="img/week3/week3_texture_sd.png" class="img-fluid" style="width:100.0%"></p>
+<p>This week was about corrections and enhancement, and it made me think less about satellite images as pictures and more as measurements. The main lesson was not to memorise every formula. It was to understand why two images of the same place can look different even when the land surface has not changed. The lecture grouped the main problems into geometric, atmospheric, topographic and radiometric correction. In simple terms, corrections try to make the image line up properly in space and make pixel values more comparable through time <span class="citation" data-cites="jensen2016 radiativ2013">(<a href="references.html#ref-jensen2016" role="doc-biblioref">Jensen, 2016</a>; <a href="references.html#ref-radiativ2013" role="doc-biblioref">YouTube, 2013</a>)</span>.</p>
+<div id="fig-week3-atcorr" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-atcorr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://hls.gsfc.nasa.gov/wp-content/uploads/2018/10/AC_LaSRC_example.jpg.jpeg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-atcorr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: NASA HLS example comparing top-of-atmosphere reflectance on the left with surface reflectance after atmospheric correction on the right. The corrected image is less hazy and the contrast between vegetation, bare ground and built surfaces is clearer. Source: NASA HLS <span class="citation" data-cites="hlsatcorr">(<a href="references.html#ref-hlsatcorr" role="doc-biblioref">NASA Goddard Space Flight Center, n.d.</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-week3-atcorr" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> made the value of atmospheric correction much easier to understand than the equations alone. The surface reflectance image is easier to read because it reduces atmospheric effects and makes the surface signal more stable. That also explains why the practical workbook and lecture pushed us towards analysis-ready data. In current workflows, the more realistic starting point is usually Collection 2 Level 2 surface reflectance rather than raw digital numbers. But this does not make correction irrelevant. It means I still need to know what product I am using, what processing has already happened, and whether it is fit for my research question <span class="citation" data-cites="ceosana landsat2022">(<a href="references.html#ref-ceosana" role="doc-biblioref">CEOS, n.d.</a>; <a href="references.html#ref-landsat2022" role="doc-biblioref">U.S. Geological Survey, 2022</a>)</span>.</p>
+<div id="fig-week3-products" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-products-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/Collection2_samples_3PANEL_022031_20200916_v4.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-products-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: USGS example of Collection 2 products from the same Landsat scene: top-of-atmosphere reflectance, surface reflectance and surface temperature. This is a useful reminder that “Landsat data” is not one single product. Source: USGS <span class="citation" data-cites="landsat2022">(<a href="references.html#ref-landsat2022" role="doc-biblioref">U.S. Geological Survey, 2022</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<p>For the practical I used Landsat Collection 2 Level 2 surface reflectance for a small study area in Cape Town. I kept the area small because texture measures can become computationally expensive very quickly. My first problem was actually basic GIS housekeeping rather than remote sensing: the study area shapefile had no coordinate system. I assigned WGS84 and then reprojected it to the Landsat grid before cropping and masking. That was a useful reminder that image analysis can fail for simple metadata reasons before any advanced method starts.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-ndvi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_ndvi.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: NDVI from the Cape Town Landsat surface reflectance image. Vegetated areas stand out clearly, while water and dense built surfaces stay low.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-vegmask" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-vegmask-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_vegmask.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-vegmask-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: A simple vegetation mask made by applying an NDVI threshold of 0.2. This is quick and useful, but the threshold is not universal.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>I started with NDVI because it is the clearest example of ratio-based enhancement. It gave a quick first split between greener mountain and park areas and non-vegetated surfaces. I then turned that into a vegetation mask using a threshold of 0.2. The result is easy to read, but it also shows one weakness of threshold methods: bright soil, sparse vegetation and shadow can all complicate the interpretation <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref">Jensen, 2016</a>)</span>.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-smooth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_filter_smooth_red.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: A 3 by 3 low-pass mean filter applied to the red band. This smooths local variation and makes broader patterns easier to see.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-edges" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-edges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_filter_edges_red.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-edges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: A high-pass edge filter on the same band. This sharpens local boundaries but also amplifies noise.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>After that I tested two spatial filters on the red band. The low-pass filter reduced local noise, while the high-pass filter made the coastline and sharper land-cover boundaries stand out more clearly. I also calculated a 7 by 7 local standard deviation as a simple texture layer and then combined that with the spectral bands in a PCA. This gave a clearer visual separation between smoother water surfaces, greener mountain slopes and more heterogeneous built-up areas.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-texture" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-texture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_texture_sd.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-texture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: Local standard deviation texture layer using a 7 by 7 window. Higher values highlight more heterogeneous areas, especially the urban fabric.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-week3-pca" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-week3-pca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/week3/week3_pca_rgb.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week3-pca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.8: RGB display of the first three principal components after combining surface reflectance bands with the texture layer. This compresses the information into a more interpretable composite.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="applications" class="level2">
 <h2 class="anchored" data-anchor-id="applications">Applications</h2>
-<p>Corrections matter when a study compares images across time or across sensors. Atmospheric effects can shift reflectance values even if the surface is unchanged, so surface reflectance products are often preferred for monitoring vegetation, drought, or urban change <span class="citation" data-cites="jensen2016 landsat2024">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>; <a href="references.html#ref-landsat2024" role="doc-biblioref"><strong>landsat2024?</strong></a>)</span>. A Cape Town drought study used Landsat data with vegetation indices to map drought severity and its spatial pattern, which shows how corrected reflectance supports environmental analysis at city scale <span class="citation" data-cites="orimoloye2019">(<a href="references.html#ref-orimoloye2019" role="doc-biblioref"><strong>orimoloye2019?</strong></a>)</span>. In practice, using an analysis ready product reduces processing time, but it does not remove the need for quality checks. Cloud, haze, and shadow still affect pixels, and each product has its own algorithm and quality masks. For mosaics or multi-scene analysis, consistent correction also helps to reduce seams and brightness jumps before compositing or further modelling.</p>
-<p>Enhancement methods then turn corrected bands into features that match a research question. NDVI is a simple ratio that isolates vegetation signal and reduces some illumination effects, so it is widely used for mapping urban greenness and tracking stress. In my outputs, the NDVI and the vegetation mask provide a fast first separation between vegetated and non-vegetated surfaces, which could support later classification or sampling design. Spatial filters and texture measures add information about local structure. Edge filters can highlight roads, coastlines, and block boundaries, while local variability can separate smooth water from complex built surfaces. Urban land cover studies often combine spectral indices with extra features and tuned thresholds because cities mix materials within one pixel and create strong shadow effects <span class="citation" data-cites="faridatul2018">(<a href="references.html#ref-faridatul2018" role="doc-biblioref"><strong>faridatul2018?</strong></a>)</span>. Data fusion extends this idea by combining sensors with different strengths. A review on multispectral and radar fusion shows that combining datasets can improve monitoring when optical data are limited by clouds and when structure information is needed <span class="citation" data-cites="schultetobuhne2018">(<a href="references.html#ref-schultetobuhne2018" role="doc-biblioref"><strong>schultetobuhne2018?</strong></a>)</span>. My fused PCA step followed the same logic at a smaller scale by combining reflectance with a texture layer, then using PCA to compress the information into a few components that are easier to visualise and can be used as inputs for models <span class="citation" data-cites="jensen2016">(<a href="references.html#ref-jensen2016" role="doc-biblioref"><strong>jensen2016?</strong></a>)</span>.</p>
+<p>Corrected reflectance matters most when a study compares images across dates or across sensors. If atmospheric effects stay in the data, a change in pixel values may reflect haze or illumination differences rather than real land-surface change. That is one reason Level 2 surface reflectance products are widely used in environmental monitoring <span class="citation" data-cites="landsat2024">(<a href="references.html#ref-landsat2024" role="doc-biblioref">U.S. Geological Survey, 2024</a>)</span>. A Cape Town drought study by <span class="citation" data-cites="orimoloye2019">Orimoloye et al. (<a href="references.html#ref-orimoloye2019" role="doc-biblioref">2019</a>)</span> is a good example because it uses Landsat-derived vegetation information to map spatial patterns of stress. That kind of result only makes sense once the input reflectance is reasonably comparable across the study area and through time.</p>
+<p>Enhancement methods are then used to turn corrected imagery into features that better match the research question. NDVI is a quick way to separate greener surfaces, but cities are spectrally messy and one pixel often mixes roofs, roads, shadow and vegetation. This is why urban studies often combine simple indices with filters, texture or other derived layers <span class="citation" data-cites="faridatul2018">(<a href="references.html#ref-faridatul2018" role="doc-biblioref">Faridatul &amp; Wu, 2018</a>)</span>. The fusion idea is also broader than my small practical example. <span class="citation" data-cites="schultetobuhne2018">Schulte To Bühne &amp; Pettorelli (<a href="references.html#ref-schultetobuhne2018" role="doc-biblioref">2018</a>)</span> show that combining datasets or feature types can improve monitoring when one source alone is not enough. In my case, adding texture before PCA made the built fabric look more distinct, which suggests these layers could become useful inputs for later classification rather than just better-looking maps.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>This week helped me link theory about corrections with practical feature building. I now see surface reflectance as a foundation for most comparisons, but I also see the risk of treating it as a black box. For my Cape Town workflow, the first challenge was not an algorithm but metadata, because my study area file had no coordinate system. Fixing the coordinate system and matching projections was essential before any analysis. This reminds me that good results depend on simple checks such as coordinate reference systems, band names, and missing data.</p>
-<p>The enhancement steps were fast to run, but they involve choices that affect meaning. An NDVI threshold of 0.2 is easy to explain, yet it is not universal and it can confuse sparse vegetation, bright soil, and shadow. Texture and filtering depend on window size. A 7 by 7 window shows broad heterogeneity but can miss small features, and larger windows increase computation. The high pass filter made boundaries clearer, but it also amplified noise, so it needs careful display scaling and may not be stable for quantitative use without normalisation.</p>
-<p>Next I want to improve this workflow by using the Landsat quality masks to remove clouds and by testing how sensitive results are to threshold and window size <span class="citation" data-cites="landsat2024">(<a href="references.html#ref-landsat2024" role="doc-biblioref"><strong>landsat2024?</strong></a>)</span>. I also want to connect these features to an outcome, such as a supervised land cover map or a change map, so that I can evaluate whether added features truly improve performance rather than just looking visually better.</p>
+<p>This week made pre-processing feel more important than I expected. Before this, correction sounded like background work you do before the “real” analysis begins. Now I think it is part of the real analysis, because it shapes which differences in the image are meaningful and which are just artefacts of sensor, atmosphere or geometry. Starting from surface reflectance was sensible and efficient, but it would be easy to treat it as a black box if I did not understand what had already been done to the image.</p>
+<p>The practical also showed that enhancement is never neutral. An NDVI threshold of 0.2, a 3 by 3 filter, or a 7 by 7 texture window all produce slightly different stories about the same place. That is why I think the next useful step is not simply adding more outputs, but testing sensitivity and then carrying the best layers into a classification or change-detection task. For me, that would make the workflow feel less like image manipulation and more like a proper analytical process.</p>
 
 
-<!-- -->
-
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-ceosana" class="csl-entry" role="listitem">
+CEOS. (n.d.). <em>CEOS Analysis Ready Data</em>. Retrieved <a href="https://ceos.org/ard/">https://ceos.org/ard/</a>
+</div>
+<div id="ref-faridatul2018" class="csl-entry" role="listitem">
+Faridatul, M. I., &amp; Wu, B. (2018). Automatic Classification of Major Urban Land Covers Based on Novel Spectral Indices. <em>ISPRS International Journal of Geo-Information</em>, <em>7</em>(12), 453. <a href="https://doi.org/10.3390/ijgi7120453">https://doi.org/10.3390/ijgi7120453</a>
+</div>
+<div id="ref-jensen2016" class="csl-entry" role="listitem">
+Jensen, J. R. (2016). <em>Introductory digital image processing: a remote sensing perspective</em> (Fourth edition). Pearson Education.
+</div>
+<div id="ref-hlsatcorr" class="csl-entry" role="listitem">
+NASA Goddard Space Flight Center. (n.d.). <em>Atmospheric correction</em>. Retrieved <a href="https://hls.gsfc.nasa.gov/algorithms/atmospheric-correction/">https://hls.gsfc.nasa.gov/algorithms/atmospheric-correction/</a>
+</div>
+<div id="ref-orimoloye2019" class="csl-entry" role="listitem">
+Orimoloye, I. R., Ololade, O. O., Mazinyo, S. P., Kalumba, A. M., Ekundayo, O. Y., Busayo, E. T., Akinsanola, A. A., &amp; Nel, W. (2019). Spatial assessment of drought severity in Cape Town area, South Africa. <em>Heliyon</em>, <em>5</em>(7), e02148. <a href="https://doi.org/10.1016/j.heliyon.2019.e02148">https://doi.org/10.1016/j.heliyon.2019.e02148</a>
+</div>
+<div id="ref-schultetobuhne2018" class="csl-entry" role="listitem">
+Schulte To Bühne, H., &amp; Pettorelli, N. (2018). Better together: Integrating and fusing multispectral and radar satellite imagery to inform biodiversity monitoring, ecological research and conservation science. <em>Methods in Ecology and Evolution</em>, <em>9</em>(4), 849–865. <a href="https://doi.org/10.1111/2041-210X.12942">https://doi.org/10.1111/2041-210X.12942</a>
+</div>
+<div id="ref-landsat2022" class="csl-entry" role="listitem">
+U.S. Geological Survey. (2022). <em>Landsat Collection 2 Level-2 Science Products</em>. <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products">https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products</a>
+</div>
+<div id="ref-landsat2024" class="csl-entry" role="listitem">
+U.S. Geological Survey. (2024). <em>Landsat 8-9 Collection 2 Level 2 Science Product Guide</em>. <a href="https://www.usgs.gov/media/files/landsat-8-9-collection-2-level-2-science-product-guide">https://www.usgs.gov/media/files/landsat-8-9-collection-2-level-2-science-product-guide</a>
+</div>
+<div id="ref-radiativ2013" class="csl-entry" role="listitem">
+YouTube. (2013). <em>Radiative transfer and atmospheric correction</em>. <a href="https://www.youtube.com/watch?v=qb4yFwzsnU8">https://www.youtube.com/watch?v=qb4yFwzsnU8</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -511,57 +492,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -908,45 +838,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <span class="nav-page-text"><span class="chapter-title">Week 4&amp;5</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week 3"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This week focused on image corrections and image enhancement for remote sensing analysis. The lecture explained why raw pixel values are not stable across space and time. Geometric correction aligns an image to the ground so that each pixel is in the right place. This can involve ground control points, a transformation model, and resampling to a common grid <span class="co">[</span><span class="ot">@jensen2016</span><span class="co">]</span>. Atmospheric correction reduces scattering and absorption so values are closer to surface reflectance <span class="co">[</span><span class="ot">@radiativ2013</span><span class="co">]</span>. This supports fair comparison across dates and sensors and helps change analysis. The lecture also introduced analysis ready data, where key corrections are already applied, but the user still needs to understand what the product includes and what limits remain <span class="co">[</span><span class="ot">@ceosana</span><span class="co">]</span>.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>In the practical I used Landsat Collection 2 Level 2 surface reflectance for Cape Town <span class="co">[</span><span class="ot">@landsat2022</span><span class="co">]</span>. I loaded only the surface reflectance bands and clipped them to my study area polygon. My shapefile had a missing coordinate system, so I assigned WGS84 and then transformed it to the Landsat projection before crop and mask. After clipping I created several enhancement layers. I calculated NDVI from the red and near infrared bands to describe vegetation activity <span class="co">[</span><span class="ot">@jensen2016</span><span class="co">]</span>. The NDVI map shows higher values in the mountain and green areas and lower values over water and dense built surfaces.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/week3/week3_ndvi.png)</span>{width="100%"}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I then applied a vegetation mask using an NDVI threshold of 0.2 to separate likely vegetation from other land covers. This mask is simple and fast, but it can include false positives where soil is bright or where shadows change the index <span class="co">[</span><span class="ot">@jensen2016</span><span class="co">]</span>.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/week3/week3_vegmask.png)</span>{width="100%"}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Next I tested spatial filtering on the red band. A low pass 3 by 3 mean filter reduced local noise and made broad patterns clearer. A high pass Laplacian filter highlighted edges, which made coastlines and sharp land cover boundaries more visible.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/week3/week3_filter_smooth_red.png)</span>{width="100%"} <span class="al">![](img/week3/week3_filter_edges_red.png)</span>{width="100%"}</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>I also computed a texture proxy using a 7 by 7 local standard deviation. This layer emphasised heterogeneous urban fabric and mixed surfaces. Finally I fused the surface reflectance bands with the texture layer and ran PCA. The PCA composite increased contrast between major surface types and showed that combining spectral and spatial features can reveal structure that is not clear in one band.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/week3/week3_pca_rgb.png)</span>{width="100%"} <span class="al">![](img/week3/week3_texture_sd.png)</span>{width="100%"}</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Corrections matter when a study compares images across time or across sensors. Atmospheric effects can shift reflectance values even if the surface is unchanged, so surface reflectance products are often preferred for monitoring vegetation, drought, or urban change <span class="co">[</span><span class="ot">@jensen2016; @landsat2024</span><span class="co">]</span>. A Cape Town drought study used Landsat data with vegetation indices to map drought severity and its spatial pattern, which shows how corrected reflectance supports environmental analysis at city scale <span class="co">[</span><span class="ot">@orimoloye2019</span><span class="co">]</span>. In practice, using an analysis ready product reduces processing time, but it does not remove the need for quality checks. Cloud, haze, and shadow still affect pixels, and each product has its own algorithm and quality masks. For mosaics or multi-scene analysis, consistent correction also helps to reduce seams and brightness jumps before compositing or further modelling.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Enhancement methods then turn corrected bands into features that match a research question. NDVI is a simple ratio that isolates vegetation signal and reduces some illumination effects, so it is widely used for mapping urban greenness and tracking stress. In my outputs, the NDVI and the vegetation mask provide a fast first separation between vegetated and non-vegetated surfaces, which could support later classification or sampling design. Spatial filters and texture measures add information about local structure. Edge filters can highlight roads, coastlines, and block boundaries, while local variability can separate smooth water from complex built surfaces. Urban land cover studies often combine spectral indices with extra features and tuned thresholds because cities mix materials within one pixel and create strong shadow effects <span class="co">[</span><span class="ot">@faridatul2018</span><span class="co">]</span>. Data fusion extends this idea by combining sensors with different strengths. A review on multispectral and radar fusion shows that combining datasets can improve monitoring when optical data are limited by clouds and when structure information is needed <span class="co">[</span><span class="ot">@schultetobuhne2018</span><span class="co">]</span>. My fused PCA step followed the same logic at a smaller scale by combining reflectance with a texture layer, then using PCA to compress the information into a few components that are easier to visualise and can be used as inputs for models <span class="co">[</span><span class="ot">@jensen2016</span><span class="co">]</span>.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>This week helped me link theory about corrections with practical feature building. I now see surface reflectance as a foundation for most comparisons, but I also see the risk of treating it as a black box. For my Cape Town workflow, the first challenge was not an algorithm but metadata, because my study area file had no coordinate system. Fixing the coordinate system and matching projections was essential before any analysis. This reminds me that good results depend on simple checks such as coordinate reference systems, band names, and missing data.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>The enhancement steps were fast to run, but they involve choices that affect meaning. An NDVI threshold of 0.2 is easy to explain, yet it is not universal and it can confuse sparse vegetation, bright soil, and shadow. Texture and filtering depend on window size. A 7 by 7 window shows broad heterogeneity but can miss small features, and larger windows increase computation. The high pass filter made boundaries clearer, but it also amplified noise, so it needs careful display scaling and may not be stable for quantitative use without normalisation.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Next I want to improve this workflow by using the Landsat quality masks to remove clouds and by testing how sensitive results are to threshold and window size <span class="co">[</span><span class="ot">@landsat2024</span><span class="co">]</span>. I also want to connect these features to an outcome, such as a supervised land cover map or a change map, so that I can evaluate whether added features truly improve performance rather than just looking visually better.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

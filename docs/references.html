@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -84,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week 7.html" rel="prev">
+<link href="./week 9.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -92,14 +57,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc8a987af0c04ed126583a3be4d7e66c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4b2135033f0636c8298128307f4a9483.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ef4d8e9faa04af36b84e1866e7343808.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d447660303c5013b4537fbd103b63b3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -132,169 +93,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -315,13 +114,10 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">CASA0023 Learning Diary</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -333,8 +129,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remotely Sensing Cities and Environments</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -342,36 +137,90 @@ div.csl-indent {
   <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations (Weeks 1-3)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Policy Framing (Weeks 4-5)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week 4&amp;5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4&amp;5</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Classification and Modelling (Weeks 6-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 6</span></a>
+  <a href="./week 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">week 7</span></a>
+  <a href="./week 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Urban Heat and Synthesis (Week 9)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link active">
@@ -389,10 +238,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">References</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -410,10 +258,26 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-amani2020" class="csl-entry" role="listitem">
+Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A.,
+Mirmazloumi, S. M., Moghaddam, S. M. A., Mahdavi, S., Ghahremanloo, M.,
+Parsian, S., Wu, Q., &amp; Brisco, B. (2020). Google earth engine cloud
+computing platform for remote sensing big data applications: A
+comprehensive review. <em>IEEE Journal of Selected Topics in Applied
+Earth Observations and Remote Sensing</em>, <em>13</em>, 5326–5350. <a href="https://doi.org/10.1109/JSTARS.2020.3021052">https://doi.org/10.1109/JSTARS.2020.3021052</a>
+</div>
 <div id="ref-baig2014" class="csl-entry" role="listitem">
 Baig, M. H. A., Zhang, L., Shuai, T., &amp; Tong, Q. (2014). Derivation
 of a tasselled cap transformation based on landsat 8 at-satellite
 reflectance. <em>Remote Sensing Letters</em>, <em>5</em>(5), 423–431. <a href="https://doi.org/10.1080/2150704X.2014.915434">https://doi.org/10.1080/2150704X.2014.915434</a>
+</div>
+<div id="ref-wikimediamixedpixel" class="csl-entry" role="listitem">
+Beck, A. (2012). <em>Mixed pixel</em>. <a href="https://commons.wikimedia.org/wiki/File:Mixed_pixel.svg">https://commons.wikimedia.org/wiki/File:Mixed_pixel.svg</a>
+</div>
+<div id="ref-belgiu2016" class="csl-entry" role="listitem">
+Belgiu, M., &amp; Dragut, L. (2016). Random forest in remote sensing: A
+review of applications and future directions. <em>ISPRS Journal of
+Photogrammetry and Remote Sensing</em>, <em>114</em>, 24–31. <a href="https://doi.org/10.1016/j.isprsjprs.2016.01.011">https://doi.org/10.1016/j.isprsjprs.2016.01.011</a>
 </div>
 <div id="ref-butcher2016" class="csl-entry" role="listitem">
 Butcher, G. (2016). <em>Tour of the electromagnetic spectrum</em> (Third
@@ -433,15 +297,51 @@ Faridatul, M. I., &amp; Wu, B. (2018). Automatic Classification of Major
 Urban Land Covers Based on Novel Spectral Indices. <em>ISPRS
 International Journal of Geo-Information</em>, <em>7</em>(12), 453. <a href="https://doi.org/10.3390/ijgi7120453">https://doi.org/10.3390/ijgi7120453</a>
 </div>
+<div id="ref-foody2004" class="csl-entry" role="listitem">
+Foody, G. M. (2004). Sub-pixel methods in remote sensing. In S. M. de
+Jong &amp; F. D. van der Meer (Eds.), <em>Remote sensing image analysis:
+Including the spatial domain</em> (pp. 37–49). Springer.
+</div>
+<div id="ref-gorelick2017" class="csl-entry" role="listitem">
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., &amp;
+Moore, R. (2017). Google earth engine: Planetary-scale geospatial
+analysis for everyone. <em>Remote Sensing of Environment</em>,
+<em>202</em>, 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+</div>
+<div id="ref-hansen2013" class="csl-entry" role="listitem">
+Hansen, M. C., Potapov, P. V., Moore, R., Hancher, M., Turubanova, S.
+A., Tyukavina, A., Thau, D., Stehman, S. V., Goetz, S. J., Loveland, T.
+R., Kommareddy, A., Egorov, A., Chini, L., Justice, C. O., &amp;
+Townshend, J. R. G. (2013). High-resolution global maps of 21st-century
+forest cover change. <em>Science</em>, <em>342</em>(6160), 850–853. <a href="https://doi.org/10.1126/science.1244693">https://doi.org/10.1126/science.1244693</a>
+</div>
 <div id="ref-jensen2016" class="csl-entry" role="listitem">
 Jensen, J. R. (2016). <em>Introductory digital image processing: a
 remote sensing perspective</em> (Fourth edition). Pearson Education.
+</div>
+<div id="ref-karasiak2022" class="csl-entry" role="listitem">
+Karasiak, N., Dejoux, J.-F., Monteil, C., &amp; Sheeren, D. (2022).
+Spatial dependence between training and test sets: Another pitfall of
+classification accuracy assessment in remote sensing. <em>Machine
+Learning</em>, <em>111</em>(7), 2715–2740. <a href="https://doi.org/10.1007/s10994-021-05972-1">https://doi.org/10.1007/s10994-021-05972-1</a>
 </div>
 <div id="ref-kerle2004" class="csl-entry" role="listitem">
 Kerle, N., Janssen, L., &amp; Bakker, W. H. (2004). <em>Principles of
 remote sensing: an introductory textbook</em> (3rd ed). The
 International Institute for Geo-Information Science; Earth Observation
 (ITC).
+</div>
+<div id="ref-klinenberg1999" class="csl-entry" role="listitem">
+Klinenberg, E. (1999). Denaturalizing disaster: A social autopsy of the
+1995 chicago heat wave. <em>Theory and Society</em>, <em>28</em>(2),
+239–295.
+</div>
+<div id="ref-li2022redlining" class="csl-entry" role="listitem">
+Li, D., Newman, G. D., Wilson, B., Zhang, Y., &amp; Brown, R. D. (2022).
+Modeling the relationships between historical redlining, urban heat, and
+heat-related emergency department visits: An examination of 11 texas
+cities. <em>Environment and Planning B: Urban Analytics and City
+Science</em>, <em>49</em>(3), 933–952.
 </div>
 <div id="ref-londone" class="csl-entry" role="listitem">
 London City Hall. (n.d.). <em>London Environment Strategy</em>.
@@ -451,11 +351,53 @@ Retrieved <a href="https://www.london.gov.uk/programmes-and-strategies/environme
 London Datastore. (n.d.). <em>Major Summer Heat Spots using Landsat-8
 Thermal Satellite data</em>. Retrieved <a href="https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw">https://data.london.gov.uk/dataset/major-summer-heat-spots-using-landsat-8-thermal-satellite-data-epoqw</a>
 </div>
+<div id="ref-maclachlan2021heat" class="csl-entry" role="listitem">
+MacLachlan, A., Biggs, E., Roberts, G., &amp; Boruff, B. (2021).
+Sustainable city planning: A data-driven approach for mitigating urban
+heat. <em>Frontiers in Built Environment</em>, <em>6</em>, 519599.
+</div>
+<div id="ref-matarira2023" class="csl-entry" role="listitem">
+Matarira, D., Mutanga, O., Naidu, M., &amp; Vizzari, M. (2023).
+Object-based informal settlement mapping in google earth engine using
+the integration of sentinel-1, sentinel-2, and PlanetScope satellite
+data. <em>Land</em>, <em>12</em>(1), 99. <a href="https://doi.org/10.3390/land12010099">https://doi.org/10.3390/land12010099</a>
+</div>
+<div id="ref-maxwell2018" class="csl-entry" role="listitem">
+Maxwell, A. E., Warner, T. A., &amp; Fang, F. (2018). Implementation and
+comparison of pixel-based and object-based classification methods in
+land cover classification using high spatial resolution imagery.
+<em>Remote Sensing</em>, <em>10</em>(7), 1048. <a href="https://doi.org/10.3390/rs10071048">https://doi.org/10.3390/rs10071048</a>
+</div>
+<div id="ref-mutanga2019" class="csl-entry" role="listitem">
+Mutanga, O., &amp; Kumar, L. (2019). Google earth engine applications.
+<em>Remote Sensing</em>, <em>11</em>(5), 591. <a href="https://doi.org/10.3390/rs11050591">https://doi.org/10.3390/rs11050591</a>
+</div>
+<div id="ref-hlsatcorr" class="csl-entry" role="listitem">
+NASA Goddard Space Flight Center. (n.d.). <em>Atmospheric
+correction</em>. Retrieved <a href="https://hls.gsfc.nasa.gov/algorithms/atmospheric-correction/">https://hls.gsfc.nasa.gov/algorithms/atmospheric-correction/</a>
+</div>
+<div id="ref-nasaecostresslondon2022" class="csl-entry" role="listitem">
+NASA Science. (2022). <em>NASA’s ECOSTRESS shows overnight heat in
+london</em>. <a href="https://science.nasa.gov/photojournal/nasas-ecostress-shows-overnight-heat-in-london/">https://science.nasa.gov/photojournal/nasas-ecostress-shows-overnight-heat-in-london/</a>
+</div>
+<div id="ref-nasaurbansurfaces2025" class="csl-entry" role="listitem">
+NASA Science. (2025). <em>What is an urban heat island?</em> <a href="https://science.nasa.gov/kids/earth/what-is-an-urban-heat-island/">https://science.nasa.gov/kids/earth/what-is-an-urban-heat-island/</a>
+</div>
+<div id="ref-nowak2022" class="csl-entry" role="listitem">
+Nowak, D. J., Ellis, A., &amp; Greenfield, E. J. (2022). The disparity
+in tree cover and ecosystem service values among redlining classes in
+the united states. <em>Landscape and Urban Planning</em>, <em>221</em>,
+104370.
+</div>
 <div id="ref-orimoloye2019" class="csl-entry" role="listitem">
 Orimoloye, I. R., Ololade, O. O., Mazinyo, S. P., Kalumba, A. M.,
 Ekundayo, O. Y., Busayo, E. T., Akinsanola, A. A., &amp; Nel, W. (2019).
 Spatial assessment of drought severity in Cape Town area, South Africa.
 <em>Heliyon</em>, <em>5</em>(7), e02148. <a href="https://doi.org/10.1016/j.heliyon.2019.e02148">https://doi.org/10.1016/j.heliyon.2019.e02148</a>
+</div>
+<div id="ref-wikimediaconfmatrix" class="csl-entry" role="listitem">
+Qiongjx. (2025). <em>Confusion matrix with accuracy metrics for land
+cover</em>. <a href="https://commons.wikimedia.org/wiki/File:Confusion_matrix_with_accuracy_metrics_for_land_cover.jpg">https://commons.wikimedia.org/wiki/File:Confusion_matrix_with_accuracy_metrics_for_land_cover.jpg</a>
 </div>
 <div id="ref-robinson2022" class="csl-entry" role="listitem">
 Robinson, J. M., Mavoa, S., Robinson, K., &amp; Brindley, P. (2022).
@@ -468,6 +410,31 @@ Integrating and fusing multispectral and radar satellite imagery to
 inform biodiversity monitoring, ecological research and conservation
 science. <em>Methods in Ecology and Evolution</em>, <em>9</em>(4),
 849–865. <a href="https://doi.org/10.1111/2041-210X.12942">https://doi.org/10.1111/2041-210X.12942</a>
+</div>
+<div id="ref-sidhu2018" class="csl-entry" role="listitem">
+Sidhu, N., Pebesma, E., &amp; Câmara, G. (2018). Using google earth
+engine to detect land cover change: Singapore as a use case.
+<em>European Journal of Remote Sensing</em>, <em>51</em>(1), 486–500. <a href="https://doi.org/10.1080/22797254.2018.1451782">https://doi.org/10.1080/22797254.2018.1451782</a>
+</div>
+<div id="ref-nasanycvegetationtemp2025" class="csl-entry" role="listitem">
+Simmon, R. (2025). <em>Cooling effects of plants on new york city’s
+heat</em>. <a href="https://science.nasa.gov/kids/earth/what-is-an-urban-heat-island/">https://science.nasa.gov/kids/earth/what-is-an-urban-heat-island/</a>
+</div>
+<div id="ref-tamiminia2020" class="csl-entry" role="listitem">
+Tamiminia, H., Salehi, B., Mahdianpari, M., Quackenbush, L., Adeli, S.,
+&amp; Brisco, B. (2020). Google earth engine for geo-big data
+applications: A meta-analysis and systematic review. <em>ISPRS Journal
+of Photogrammetry and Remote Sensing</em>, <em>164</em>, 152–170. <a href="https://doi.org/10.1016/j.isprsjprs.2020.04.001">https://doi.org/10.1016/j.isprsjprs.2020.04.001</a>
+</div>
+<div id="ref-wikimedialcmapping" class="csl-entry" role="listitem">
+Uddinkabir. (2015a). <em>Land cover mapping using TM images</em>. <a href="https://commons.wikimedia.org/wiki/File:Land_cover_mapping_using_TM_images.jpg">https://commons.wikimedia.org/wiki/File:Land_cover_mapping_using_TM_images.jpg</a>
+</div>
+<div id="ref-wikimediaobia" class="csl-entry" role="listitem">
+Uddinkabir. (2015b). <em>Object based image analysis</em>. <a href="https://commons.wikimedia.org/wiki/File:Object_based_image_analysis.jpg">https://commons.wikimedia.org/wiki/File:Object_based_image_analysis.jpg</a>
+</div>
+<div id="ref-unep2021" class="csl-entry" role="listitem">
+United Nations Environment Programme, &amp; RMI. (2021). <em>Beating the
+heat: A sustainable cooling handbook for cities</em>. <a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities">https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities</a>
 </div>
 <div id="ref-landsat2022" class="csl-entry" role="listitem">
 U.S. Geological Survey. (2022). <em>Landsat Collection 2 Level-2 Science
@@ -483,6 +450,11 @@ infrastructure to urban heat and human health risk mitigation in oslo,
 norway. <em>Science of The Total Environment</em>, <em>709</em>, 138846.
 <a href="https://doi.org/10.1016/j.scitotenv.2019.138846">https://doi.org/10.1016/j.scitotenv.2019.138846</a>
 </div>
+<div id="ref-wilson2020" class="csl-entry" role="listitem">
+Wilson, B. (2020). Urban heat management and the legacy of redlining.
+<em>Journal of the American Planning Association</em>, <em>86</em>(4),
+443–457.
+</div>
 <div id="ref-radiativ2013" class="csl-entry" role="listitem">
 YouTube. (2013). <em>Radiative transfer and atmospheric correction</em>.
 <a href="https://www.youtube.com/watch?v=qb4yFwzsnU8">https://www.youtube.com/watch?v=qb4yFwzsnU8</a>
@@ -490,25 +462,10 @@ YouTube. (2013). <em>Radiative transfer and atmospheric correction</em>.
 </div>
 
 
-<!-- -->
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -577,57 +534,6 @@ YouTube. (2013). <em>Radiative transfer and atmospheric correction</em>.
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -965,18 +871,13 @@ YouTube. (2013). <em>Radiative transfer and atmospheric correction</em>.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week 7.html" class="pagination-link" aria-label="week 7">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">week 7</span></span>
+      <a href="./week 9.html" class="pagination-link" aria-label="Week 9">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 9</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

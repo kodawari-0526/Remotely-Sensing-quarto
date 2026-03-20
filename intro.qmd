@@ -1,13 +1,14 @@
 ---
 title: "About Me"
+toc: false
 ---
 
-My name is Zhexiang Zhou. I studied Civil Engineering at the University of Glasgow for my undergraduate degree. Now I am a student at UCL in the MSc Urban Spatial Science programme.
+::: lead
+My name is Zhexiang Zhou. I studied Civil Engineering at the University of Glasgow and I am now a student in the MSc Urban Spatial Science programme at UCL CASA. I am interested in understanding cities as measurable systems, especially where infrastructure, environmental change, and computational methods intersect.
+:::
 
-My study direction is related to digital twins and data-driven methods for urban problems. In my undergraduate study, I learned basic urban and transport design. I also used Python for programming and machine learning. However, GIS, remote sensing, R, statistics, and urban policy research are new to me.
+Before this module, I already had some experience with Python, programming logic, and machine learning, but GIS, remote sensing, R, statistics, and urban policy research were much newer to me. That is one reason this diary matters to me. I am using it not only to document weekly practical work, but also to build a foundation in the parts of spatial analysis that I had not previously studied in a structured way.
 
-I am interested in connecting remote sensing or sensor data with computer vision (CV) and large language models (LLMs). I want to use these methods to solve urban problems. I care more about climate and resilient cities. This topic is important to me because I enjoy digital twins and I have internship experience in this area. I also want to develop this into my dissertation topic. I think CV and LLMs have strong potential in urban spatial science, and there are still many research gaps.
+My longer-term interests are closely tied to digital twins, climate resilience, and data-driven approaches to urban problems. I am particularly interested in how remote sensing or other sensor data might later connect with computer vision and large language models. What appeals to me about remote sensing is that it can make urban conditions visible at scale, but it also forces careful thinking about what is actually being measured, what remains uncertain, and how technical outputs might or might not translate into useful planning evidence.
 
-In this module, I want to build a solid foundation in remote sensing. I want to understand and compare different sensors and datasets, for example how different spatial resolutions affect results. In the future, I hope to use strong remote sensing knowledge to support interdisciplinary research and publish academic papers.
-
-I will use this learning diary to read more related papers and build my own literature library. I will also record my practical work, outputs, and questions each week. By the end of the term, I hope to have a useful literature collection that can support my future research, including possible PhD study.
+In this module, I want to understand the logic behind sensors, datasets, and preprocessing rather than treating ready-made products as black boxes. I also want to compare different forms of spatial, spectral, and temporal resolution more critically, because that seems essential if I want to use earth observation well in future research. My hope is that this diary becomes more than a course submission: a record of practical outputs, a small literature base, and a starting point for future dissertation work around climate and resilient cities.
