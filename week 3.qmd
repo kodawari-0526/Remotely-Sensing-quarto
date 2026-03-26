@@ -4,7 +4,7 @@ title: "Week 3"
 
 ## Summary
 
-This week was about corrections and enhancement, and it made me think less about satellite images as pictures and more as measurements. The main lesson was not to memorise every formula. It was to understand why two images of the same place can look different even when the land surface has not changed. The lecture grouped the main problems into geometric, atmospheric, topographic and radiometric correction. In simple terms, corrections try to make the image line up properly in space and make pixel values more comparable through time [@jensen2016; @radiativ2013].
+This week was about corrections and enhancement, and it made me think less about satellite images as pictures and more as measurements. The main lesson was not to memorise every formula. It was to understand why two images of the same place can look different even when the land surface has not changed. The lecture grouped the main problems into geometric, atmospheric, topographic and radiometric correction. In simple terms, corrections try to make the image line up properly in space and make pixel values more comparable through time [@jensen2016].
 
 ![NASA HLS example comparing top-of-atmosphere reflectance on the left with surface reflectance after atmospheric correction on the right. The corrected image is less hazy and the contrast between vegetation, bare ground and built surfaces is clearer. Source: NASA HLS [@hlsatcorr].](https://hls.gsfc.nasa.gov/wp-content/uploads/2018/10/AC_LaSRC_example.jpg.jpeg){#fig-week3-atcorr width="100%"}
 
